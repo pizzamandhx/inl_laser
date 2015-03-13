@@ -24,3 +24,14 @@ C:\Apps\Acuity 820 Quick Start Kit Project\Archive\AP820 Demo\AP820 Demo\obj\Deb
 C:\Apps\Acuity 820 Quick Start Kit Project\Archive\AP820 Demo\AP820 Demo\obj\Debug\AP820 Demo.xml
 C:\Apps\Acuity 820 Quick Start Kit Project\Archive\AP820 Demo\AP820 Demo\obj\Debug\AP820 Demo.pdb
 C:\Apps\Acuity 820 Manual\vbapp\AP820 Demo\AP820 Demo\bin\Debug\AP820 Demo.exe.config
+C:\Users\Allen\Source\Repos\inl_laser2\AP820 Demo\AP820 Demo\bin\Debug\AP820 Demo.exe.config
+C:\Users\Allen\Source\Repos\inl_laser2\AP820 Demo\AP820 Demo\obj\Debug\AP820 Demo.exe
+C:\Users\Allen\Source\Repos\inl_laser2\AP820 Demo\AP820 Demo\obj\Debug\AP820 Demo.xml
+C:\Users\Allen\Source\Repos\inl_laser2\AP820 Demo\AP820 Demo\obj\Debug\AP820 Demo.pdb
+C:\Users\Allen\Source\Repos\inl_laser2\AP820 Demo\AP820 Demo\bin\Debug\AP820 Demo.exe
+C:\Users\Allen\Source\Repos\inl_laser2\AP820 Demo\AP820 Demo\bin\Debug\AP820 Demo.pdb
+C:\Users\Allen\Source\Repos\inl_laser2\AP820 Demo\AP820 Demo\bin\Debug\AP820 Demo.xml
+C:\Users\Allen\Source\Repos\inl_laser2\AP820 Demo\AP820 Demo\obj\Debug\AP820_Demo.Form1.resources
+C:\Users\Allen\Source\Repos\inl_laser2\AP820 Demo\AP820 Demo\obj\Debug\AP820_Demo.Resources.resources
+C:\Users\Allen\Source\Repos\inl_laser2\AP820 Demo\AP820 Demo\obj\Debug\AP820_Demo.SecondLaserForm.resources
+C:\Users\Allen\Source\Repos\inl_laser2\AP820 Demo\AP820 Demo\obj\Debug\AP820 Demo.vbproj.GenerateResource.Cache
