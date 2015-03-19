@@ -38,6 +38,7 @@ Imports System.Threading.Thread
 
 Public Class Form1
     'Stuff Happens
+    'more stuff happens
     Private StopFlag As Boolean
     Private HeightThreshold As Single
     Private UpdateCounts As Integer
