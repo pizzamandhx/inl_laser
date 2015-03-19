@@ -46,3 +46,7 @@ E:\AP820 Demo\AP820 Demo\obj\Debug\AP820 Demo.vbproj.GenerateResource.Cache
 E:\AP820 Demo\AP820 Demo\obj\Debug\AP820 Demo.exe
 E:\AP820 Demo\AP820 Demo\obj\Debug\AP820 Demo.xml
 E:\AP820 Demo\AP820 Demo\obj\Debug\AP820 Demo.pdb
+C:\Users\Jonathan\Source\Repos\inl_laser\AP820 Demo\bin\Debug\AP820 Demo.exe.config
+C:\Users\Jonathan\Source\Repos\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.exe
+C:\Users\Jonathan\Source\Repos\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.xml
+C:\Users\Jonathan\Source\Repos\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.pdb
