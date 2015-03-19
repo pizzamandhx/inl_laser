@@ -37,6 +37,7 @@ Imports System.Threading.Thread
 '    ***************** See IMPORTANT program notes above ******************************
 
 Public Class Form1
+    'Stuff Happens
     Private StopFlag As Boolean
     Private HeightThreshold As Single
     Private UpdateCounts As Integer
