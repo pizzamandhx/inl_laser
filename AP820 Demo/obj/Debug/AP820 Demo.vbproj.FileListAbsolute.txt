@@ -54,3 +54,7 @@ C:\Users\cas06_000\Source\Repos\inl_laser\AP820 Demo\bin\Debug\AP820 Demo.exe.co
 C:\Users\cas06_000\Source\Repos\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.exe
 C:\Users\cas06_000\Source\Repos\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.xml
 C:\Users\cas06_000\Source\Repos\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.pdb
+C:\Users\Jordan\Documents\Ecen 499 - Senior Project\inl_laser\AP820 Demo\bin\Debug\AP820 Demo.exe.config
+C:\Users\Jordan\Documents\Ecen 499 - Senior Project\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.exe
+C:\Users\Jordan\Documents\Ecen 499 - Senior Project\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.xml
+C:\Users\Jordan\Documents\Ecen 499 - Senior Project\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.pdb
