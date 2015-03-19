@@ -10,7 +10,7 @@
     Private length As Double
     Private avgLength As Double
     Private maxLength As Double
-    'hello world
+
     Private volume As Double
     Private avgVolume As Double
     Private maxVolume As Double
