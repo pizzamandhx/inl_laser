@@ -68,20 +68,25 @@
     Private Function setMaxLength() As Double 'Uses the encoder data and finds the Longest part of the object and stores it'
     End Function
     Private Function getMaxVolume() As Double 'Returns the Max Volume'
+        getMaxVolume = setMaxVolume()
     End Function
     Private Function setMaxVolume() As Double 'Compute the volume using Max Height, Max Length, and Max Width every time this runs
     End Function
 
 
     Private Function getLeftEdge() As Integer 'Returns the left edge location
+        getLeftEdge = setLeftEdge()
     End Function
     Private Function setLeftEdge() As Integer  'Finds the first measurement of the object and stores it into the leftEdgeLoc variable'
     End Function
     Private Function getRightEdge() As Integer 'Returns the right edge location'
+        getRightEdge = setRightEdge()
     End Function
     Private Function setRightEdge() As Integer 'Finds the end of the object (the right side) and stores it into the rightEdgeLoc variable'
+
     End Function
     Private Function mergeBiomass() As Integer 'Combines 2 "seperate" that when connected by a scan merges the right object into the left object'
+
     End Function
     'Private Function setRightEdge() As Integer
     'End Function
