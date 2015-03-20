@@ -18,18 +18,22 @@
     Private leftEdgeLoc As Double
     Private rightEdgeLoc As Double
     Private Function getWidth() As Integer 'Returns width of the current slice'
+        Return width
     End Function
     Private Function setWidth() As Integer ''
     End Function
     Private Function getHeight() As Integer 'Returns height of current data point in object'
+        Return height
     End Function
     Private Function setHeight() As Integer ''
     End Function
     Private Function getLength() As Integer 'Returns '
+        Return length
     End Function
     Private Function setLength() As Integer ''
     End Function
     Private Function getVolume() As Integer ''
+        Return volume
     End Function
     Private Function setVolume() As Integer ''
     End Function
@@ -37,18 +41,22 @@
 
 
     Private Function getAvgWidth() As Integer 'Returns the average width'
+        Return getAvgWidth
     End Function
     Private Function setAvgWidth() As Integer ''
     End Function
     Private Function getAvgHeight() As Integer ''
+        Return avgHeight
     End Function
     Private Function setAvgHeight() As Integer ''
     End Function
     Private Function getAvgLength() As Integer ''
+        Return avgLength
     End Function
     Private Function setAvgLength() As Integer ''
     End Function
     Private Function getAvgVolume() As Integer ''
+        Return avgVolume
     End Function
     Private Function setAvgVolume() As Integer ''
     End Function
@@ -56,37 +64,38 @@
 
 
     Private Function getMaxWidth() As Double 'Returs the Max Width'
+        Return getMaxWidth
     End Function
     Private Function setMaxWidth() As Double 'Takes left edge and right edge to calculate the width'
     End Function
     Private Function getMaxHeight() As Double 'Returns Max Height'
+        Return maxHeight
     End Function
     Private Function setMaxHeight() As Double 'Takes the Max Z coordinate and takes the highest of the object and stores it'
     End Function
     Private Function getMaxLength() As Double 'Returns Max length'
+        Return maxLength
     End Function
     Private Function setMaxLength() As Double 'Uses the encoder data and finds the Longest part of the object and stores it'
     End Function
     Private Function getMaxVolume() As Double 'Returns the Max Volume'
-        getMaxVolume = setMaxVolume()
+        Return maxVolume
     End Function
     Private Function setMaxVolume() As Double 'Compute the volume using Max Height, Max Length, and Max Width every time this runs
     End Function
 
 
     Private Function getLeftEdge() As Integer 'Returns the left edge location
-        getLeftEdge = setLeftEdge()
+        Return leftEdgeLoc
     End Function
     Private Function setLeftEdge() As Integer  'Finds the first measurement of the object and stores it into the leftEdgeLoc variable'
     End Function
     Private Function getRightEdge() As Integer 'Returns the right edge location'
-        getRightEdge = setRightEdge()
+        Return rightEdgeLoc
     End Function
     Private Function setRightEdge() As Integer 'Finds the end of the object (the right side) and stores it into the rightEdgeLoc variable'
-
     End Function
     Private Function mergeBiomass() As Integer 'Combines 2 "seperate" that when connected by a scan merges the right object into the left object'
-
     End Function
     'Private Function setRightEdge() As Integer
     'End Function
