@@ -15,8 +15,8 @@
     Private avgVolume As Double
     Private maxVolume As Double
 
-    Private leftEdgeLoc As Double
-    Private rightEdgeLoc As Double
+    Private leftEdgeLoc(0 To 290) As Integer
+    Private rightEdgeLoc(0 To 290) As Integer
     Private Function getWidth() As Integer 'Returns width of the current slice'
         Return width
     End Function
@@ -85,7 +85,7 @@
     End Function
 
 
-    Private Function getLeftEdge() As Integer 'Returns the left edge location
+    Private Function getLeftEdge() As Integer 'Returns array of the left edge location
         Return leftEdgeLoc
     End Function
     Private Function setLeftEdge() As Integer  'Finds the first measurement of the object and stores it into the leftEdgeLoc variable of one single scan
@@ -103,7 +103,7 @@
         Next i
         'Return all the LeftEdge's of every object for that scan
     End Function
-    Private Function getRightEdge() As Integer 'Returns the right edge location'
+    Private Function getRightEdge() As Integer 'Returns array of the right edge location'
         Return rightEdgeLoc
     End Function
     Private Function setRightEdge() As Integer 'Finds the end of the object (the right side) and stores it into the rightEdgeLoc variable of one single scan'
