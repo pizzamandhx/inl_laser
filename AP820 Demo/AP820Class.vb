@@ -2,6 +2,7 @@
 Imports System.Text
 
 'junk comment
+'junk comment 2
 Public Class AP820Class
     <DllImport("EthernetScanner.dll")> _
     Private Shared Function EthernetScanner_Connect(ByVal IPAddr As String, ByVal Port As String, ByVal Timeout As UInteger) As IntPtr
