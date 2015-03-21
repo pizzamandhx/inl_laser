@@ -69,3 +69,7 @@ C:\Users\Jordan\Documents\Ecen 499 - Senior Project\inl_laser\AP820 Demo\obj\Deb
 C:\Users\Jordan\Documents\Ecen 499 - Senior Project\inl_laser\AP820 Demo\obj\Debug\AP820_Demo.Resources.resources
 C:\Users\Jordan\Documents\Ecen 499 - Senior Project\inl_laser\AP820 Demo\obj\Debug\AP820_Demo.SecondLaserForm.resources
 C:\Users\Jordan\Documents\Ecen 499 - Senior Project\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.vbproj.GenerateResource.Cache
+C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\bin\Debug\AP820 Demo.exe.config
+C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.exe
+C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.xml
+C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.pdb
