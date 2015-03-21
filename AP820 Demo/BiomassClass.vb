@@ -15,12 +15,14 @@
     Private avgVolume As Double
     Private maxVolume As Double
 
-    Private leftEdgeLoc(0 To 290) As Integer
-    Private rightEdgeLoc(0 To 290) As Integer
+    Private leftEdgeLoc As Integer
+    Private rightEdgeLoc As Integer
     Private Function getWidth() As Integer 'Returns width of the current slice'
         Return width
     End Function
-    Private Function setWidth() As Integer ''
+    Private Function setWidth() As Integer 'Take the pointer left and rightedgeloc and subtract the data from where they are pointing
+        'width = scan(rightEdgeLoc) - scan(leftEdgeLoc)
+        'if width <= 0 BALEETED
     End Function
     Private Function getHeight() As Integer 'Returns height of current data point in object'
         Return height
@@ -96,10 +98,14 @@
         'For loop that loops through the single scan of data to find the left edge of the object.
         j = 1
         k = 1
-        For i = 1 To 580
+        For i = k To 580 'Array of data of a single scan
+
             ''''''Once we find that the Z data is higher than the conveyor belt, store that point. That is the left edge.
-            'If (zDataPoint > ConveyorHeight && zDataPoint - 1 == Conveyor Height)
-            'Store xDataPoint and continue through the rest of the data to find the other left edges of other objects
+            'If (zDataPoint > ConveyorHeight && zDataPoint - 1 == Conveyor Height && Intensity >=250)
+            'Set leftEdgeLoc to the first point where it is true, and then return
+            '
+            ' 
+            'On subsequent loops through the scan of data always find the first edge (which may not be the first edge)
         Next i
         'Return all the LeftEdge's of every object for that scan
     End Function
@@ -114,10 +120,11 @@
         'For loop that loops through the single scan of data to find the right edge of the object.
         j = 1
         k = 1
-        For i = 1 To 580
+        For i = 1 To 580 'Array of data of a single scan
+
             ''''''Once we find that the Z data is equal to the conveyor belt and the zDataPoint before that point is higher than the conveyor
             ''''''then store that point. That is the right edge.
-            'If (zDataPoint == ConveyorHeight && zDataPoint - 1 > Conveyor Height)
+            'If (zDataPoint == ConveyorHeight && zDataPoint - 1 > Conveyor Height  && Intensity >=250)
             'Store xDataPoint and continue through the rest of the data to find the other right edges of other objects
         Next i
         'Return all the RightEdge's of every object for that scan
