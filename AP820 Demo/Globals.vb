@@ -5,4 +5,5 @@
     Public Filename As String
     Public ValidFileNameFlag As Boolean
     Public SendToFileFlag As Boolean
+    Public Const BLOCKSIZE = 579
 End Module

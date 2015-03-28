@@ -1,7 +1,7 @@
-﻿Imports System.Threading
+﻿Imports System
+Imports System.Threading
 Imports System.Threading.Thread
 Imports System.Collections.Generic
-Imports System
 Imports System.IO
 'Imports System.Text
 'Imports System.String
@@ -49,39 +49,53 @@ Public Class Form1
     Private HeightThreshold As Single
     Private UpdateCounts As Integer
     Private GapMode As Boolean
+    ' Private slice(BLOCKSIZE) As Point
 
     '****************************************************************************************************************
     'Our code begins here
     '****************************************************************************************************************
     Private Sub btnProcessData_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnProcessData.Click
-        Dim samples As LinkedList(Of BiomassClass)
+        Dim samples As LinkedList(Of Biomass)
+        Dim j As Integer
+        Dim i As Integer
+        Dim k As Integer
+        Dim slice(BLOCKSIZE) As Point
 
+        slice = fileIO(Convert.ToString(txtFileName.Text)) 'Open the file, start reading slices
 
+        'For loop that scans a single slice of data to find the left edge of the object.
+        j = 0
+        k = 0
+        For i = k To BLOCKSIZE 'size is 580 (0 to 579)
+
+            ''''''Once we find that the Z data is higher than the conveyor belt, store that point. That is the left edge.
+            'If (zDataPoint > ConveyorHeight && zDataPoint - 1 == Conveyor Height && Intensity >=250)
+            'Set leftEdgeLoc to the first point where it is true, and then return
+            '
+            ' 
+            'On subsequent loops through the scan of data always find the first edge (which may not be the first edge)
+        Next i
+        'Return all the LeftEdge's of every object for that scan
     End Sub
 
-    Private Sub fileIO()
-        Const BLOCKSIZE = 579
-        'Dim path1 As String = "C:\Users\Sean\Documents\GitHub\inl_laser\fileIO\iotest.txt"
-        Dim path2 As String = "C:\Users\Sean\Documents\GitHub\inl_laser\fileIO\junkout.txt"
-        Dim path1 As String = "C:\Users\Sean\Documents\GitHub\inl_laser\fileIO\Knife Block (continuous with encoder).txt"
-        'Dim path1 As String = "C:\Users\Sean\Documents\GitHub\inl_laser\fileIO\junkin.txt"
+    Private Function fileIO(ByVal fileName As String) As Point()
         Dim encoder As String = ""
-        Dim i As Integer
-        Dim j As Integer
-        Dim y As Integer
-        'declare linked list of Biomass objects
-        Dim slice(BLOCKSIZE) As Point
         Dim curPoint As String = ""
         Dim loc(2) As Integer
         Dim out As String = ""
         Dim counter As Integer
+        Dim i As Integer
+        Dim j As Integer
+        Dim y As Integer
+        Dim slice(BLOCKSIZE) As Point
 
         'In
-        Using sr As StreamReader = File.OpenText(path1)
+        Using sr As StreamReader = File.OpenText(fileName)
             Do While sr.Peek >= 0
                 encoder = sr.ReadLine
                 If encoder <> "" Then
-                    i = encoder.IndexOf("Counts") + 8 'DO NOT CHANGE THIS NUMBER 8! THE ALGORITHM ONLY WORKS IF THE STRING BEING PARSED IS BUILT A CERTAIN WAY
+                    'DO NOT CHANGE THE NUMBER 8 BELOW! THE ALGORITHM ONLY WORKS IF THE STRING BEING PARSED IS BUILT A CERTAIN WAY!
+                    i = encoder.IndexOf("Counts") + 8
                     y = Convert.ToInt32(encoder.Substring(i, encoder.Length - i))
 
                     For i = 0 To BLOCKSIZE
@@ -89,7 +103,7 @@ Public Class Form1
                         loc(2) = curPoint.Length
                         counter = 0
                         For j = 0 To loc(2) - 1
-                            If (curPoint(j) = Chr(9)) Then
+                            If (curPoint(j) = Chr(9)) Then 'This checks for tabs, 44 is commas
                                 loc(counter) = j
                                 counter += 1
                             End If
@@ -98,8 +112,9 @@ Public Class Form1
                         slice(i).z = Convert.ToDouble(curPoint.Substring(loc(0) + 1, ((loc(1) - loc(0)) - 1)))
                         slice(i).i = Convert.ToInt32(curPoint.Substring(loc(1) + 1, ((loc(2) - loc(1)) - 1)))
                         slice(i).y = y
-                    Next
+                    Next i
                 End If
+                Return slice
 
                 For i = 0 To BLOCKSIZE
                     'Algorithm:
@@ -118,15 +133,16 @@ Public Class Form1
 
             Loop
         End Using
+
         'RichTextBox1.Text = cheese
-        For i = 0 To slice.Length - 1
-            out += Convert.ToString(slice(i).x) + "," + Convert.ToString(slice(i).y) + "," + Convert.ToString(slice(i).z) + "," + Convert.ToString(slice(i).i) + "," + vbCrLf
-        Next
-        'Out
-        Using srw As New StreamWriter(path2)
-            srw.Write(out)
-        End Using
-    End Sub
+        'For i = 0 To slice.Length - 1
+        '    out += Convert.ToString(slice(i).x) + "," + Convert.ToString(slice(i).y) + "," + Convert.ToString(slice(i).z) + "," + Convert.ToString(slice(i).i) + "," + vbCrLf
+        'Next
+        ''Out
+        'Using srw As New StreamWriter(path2)
+        '    srw.Write(out)
+        'End Using
+    End Function
 
     '****************************************************************************************************************
     'Acuity code begins here
@@ -1817,10 +1833,11 @@ Public Class Form1
     End Sub
 
     Private Sub btnBrowse_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnBrowse.Click
-        OpenFileDialog1.InitialDirectory = Application.StartupPath
+        'OpenFileDialog1.InitialDirectory = Application.StartupPath
+        OpenFileDialog1.InitialDirectory = "C:\Users\Sean\Documents\GitHub\inl_laser\fileIO"
         OpenFileDialog1.FileName = ""
         'OpenFileDialog1.Filter = "Text files (*.txt) | *.txt"
-        OpenFileDialog1.Filter = "CSV files (*.csv) | *.csv"
+        OpenFileDialog1.Filter = "Text files (*.txt)|*.txt|CSV files (*.csv)|*.csv" '|All files (*.*)|*.*"
         OpenFileDialog1.CheckFileExists = False
         OpenFileDialog1.Multiselect = False
         OpenFileDialog1.ValidateNames = True
