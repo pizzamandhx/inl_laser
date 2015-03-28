@@ -38,9 +38,9 @@ Partial Class Form1
         Me.Label10 = New System.Windows.Forms.Label()
         Me.btnShowSecondLaserForm = New System.Windows.Forms.Button()
         Me.chkSendToFile = New System.Windows.Forms.CheckBox()
-        Me.txtFileName = New System.Windows.Forms.TextBox()
+        Me.inFileName = New System.Windows.Forms.TextBox()
         Me.Label12 = New System.Windows.Forms.Label()
-        Me.btnBrowse = New System.Windows.Forms.Button()
+        Me.btnBrowseInput = New System.Windows.Forms.Button()
         Me.OpenFileDialog1 = New System.Windows.Forms.OpenFileDialog()
         Me.txtData = New System.Windows.Forms.TextBox()
         Me.lblVersion = New System.Windows.Forms.Label()
@@ -132,9 +132,10 @@ Partial Class Form1
         Me.btnHoleDiameterMeasurement = New System.Windows.Forms.Button()
         Me.btnProcessData = New System.Windows.Forms.Button()
         Me.GraphControl1 = New AP820_Demo.GraphControl()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnBrowseOutput = New System.Windows.Forms.Button()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
         Me.gbScansWithEncoder.SuspendLayout()
         Me.gbLaserParams.SuspendLayout()
         Me.gbConnect.SuspendLayout()
@@ -305,12 +306,12 @@ Partial Class Form1
         '
         'txtFileName
         '
-        Me.txtFileName.Location = New System.Drawing.Point(717, 39)
-        Me.txtFileName.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtFileName.Name = "txtFileName"
-        Me.txtFileName.ReadOnly = True
-        Me.txtFileName.Size = New System.Drawing.Size(606, 22)
-        Me.txtFileName.TabIndex = 61
+        Me.inFileName.Location = New System.Drawing.Point(717, 39)
+        Me.inFileName.Margin = New System.Windows.Forms.Padding(4)
+        Me.inFileName.Name = "txtFileName"
+        Me.inFileName.ReadOnly = True
+        Me.inFileName.Size = New System.Drawing.Size(606, 22)
+        Me.inFileName.TabIndex = 61
         '
         'Label12
         '
@@ -322,15 +323,15 @@ Partial Class Form1
         Me.Label12.Text = "Input File:"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'btnBrowse
+        'btnBrowseInput
         '
-        Me.btnBrowse.Location = New System.Drawing.Point(1331, 39)
-        Me.btnBrowse.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnBrowse.Name = "btnBrowse"
-        Me.btnBrowse.Size = New System.Drawing.Size(135, 22)
-        Me.btnBrowse.TabIndex = 63
-        Me.btnBrowse.Text = "Select File"
-        Me.btnBrowse.UseVisualStyleBackColor = True
+        Me.btnBrowseInput.Location = New System.Drawing.Point(1331, 36)
+        Me.btnBrowseInput.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnBrowseInput.Name = "btnBrowseInput"
+        Me.btnBrowseInput.Size = New System.Drawing.Size(135, 25)
+        Me.btnBrowseInput.TabIndex = 63
+        Me.btnBrowseInput.Text = "Select File"
+        Me.btnBrowseInput.UseVisualStyleBackColor = True
         '
         'OpenFileDialog1
         '
@@ -1288,7 +1289,7 @@ Partial Class Form1
         '
         'btnProcessData
         '
-        Me.btnProcessData.Location = New System.Drawing.Point(1331, 98)
+        Me.btnProcessData.Location = New System.Drawing.Point(1331, 103)
         Me.btnProcessData.Margin = New System.Windows.Forms.Padding(4)
         Me.btnProcessData.Name = "btnProcessData"
         Me.btnProcessData.Size = New System.Drawing.Size(135, 28)
@@ -1305,15 +1306,15 @@ Partial Class Form1
         Me.GraphControl1.TabIndex = 88
         Me.GraphControl1.Text = "GraphControl1"
         '
-        'Button1
+        'btnBrowseOutput
         '
-        Me.Button1.Location = New System.Drawing.Point(1331, 69)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(135, 22)
-        Me.Button1.TabIndex = 106
-        Me.Button1.Text = "Select File"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnBrowseOutput.Location = New System.Drawing.Point(1331, 69)
+        Me.btnBrowseOutput.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnBrowseOutput.Name = "btnBrowseOutput"
+        Me.btnBrowseOutput.Size = New System.Drawing.Size(135, 25)
+        Me.btnBrowseOutput.TabIndex = 106
+        Me.btnBrowseOutput.Text = "Select File"
+        Me.btnBrowseOutput.UseVisualStyleBackColor = True
         '
         'Label37
         '
@@ -1334,13 +1335,17 @@ Partial Class Form1
         Me.TextBox1.Size = New System.Drawing.Size(606, 22)
         Me.TextBox1.TabIndex = 104
         '
+        'OpenFileDialog2
+        '
+        Me.OpenFileDialog2.FileName = "OpenFileDialog2"
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1906, 1037)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnBrowseOutput)
         Me.Controls.Add(Me.Label37)
         Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.btnProcessData)
@@ -1363,9 +1368,9 @@ Partial Class Form1
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.lblVersion)
         Me.Controls.Add(Me.txtData)
-        Me.Controls.Add(Me.btnBrowse)
+        Me.Controls.Add(Me.btnBrowseInput)
         Me.Controls.Add(Me.Label12)
-        Me.Controls.Add(Me.txtFileName)
+        Me.Controls.Add(Me.inFileName)
         Me.Controls.Add(Me.chkSendToFile)
         Me.Controls.Add(Me.btnShowSecondLaserForm)
         Me.Controls.Add(Me.Label10)
@@ -1384,26 +1389,26 @@ Partial Class Form1
         Me.Name = "Form1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Acuity AP820 Quick-Start Code Development and Scanner Training Kit"
-        Me.gbScansWithEncoder.ResumeLayout(false)
-        Me.gbScansWithEncoder.PerformLayout
-        Me.gbLaserParams.ResumeLayout(false)
-        Me.gbLaserParams.PerformLayout
-        Me.gbConnect.ResumeLayout(false)
-        Me.gbConnect.PerformLayout
-        Me.gpGetInfo.ResumeLayout(false)
-        Me.gbTriggerMode.ResumeLayout(false)
-        Me.gbContinuousModeScans.ResumeLayout(false)
-        Me.gbContinuousModeScans.PerformLayout
-        Me.gbTriggerModeScans.ResumeLayout(false)
-        Me.gbTriggerModeScans.PerformLayout
-        Me.gbThickness.ResumeLayout(false)
-        Me.gbThickness.PerformLayout
-        Me.gbPeakCalc.ResumeLayout(false)
-        Me.gbPeakCalc.PerformLayout
-        Me.ResumeLayout(false)
-        Me.PerformLayout
+        Me.gbScansWithEncoder.ResumeLayout(False)
+        Me.gbScansWithEncoder.PerformLayout()
+        Me.gbLaserParams.ResumeLayout(False)
+        Me.gbLaserParams.PerformLayout()
+        Me.gbConnect.ResumeLayout(False)
+        Me.gbConnect.PerformLayout()
+        Me.gpGetInfo.ResumeLayout(False)
+        Me.gbTriggerMode.ResumeLayout(False)
+        Me.gbContinuousModeScans.ResumeLayout(False)
+        Me.gbContinuousModeScans.PerformLayout()
+        Me.gbTriggerModeScans.ResumeLayout(False)
+        Me.gbTriggerModeScans.PerformLayout()
+        Me.gbThickness.ResumeLayout(False)
+        Me.gbThickness.PerformLayout()
+        Me.gbPeakCalc.ResumeLayout(False)
+        Me.gbPeakCalc.PerformLayout()
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
 
-End Sub
+    End Sub
     Friend WithEvents btnGetVersion As System.Windows.Forms.Button
     Friend WithEvents txtVersion As System.Windows.Forms.TextBox
     Friend WithEvents btnGetInfo As System.Windows.Forms.Button
@@ -1420,9 +1425,10 @@ End Sub
     Friend WithEvents Label10 As System.Windows.Forms.Label
     Friend WithEvents btnShowSecondLaserForm As System.Windows.Forms.Button
     Friend WithEvents chkSendToFile As System.Windows.Forms.CheckBox
-    Friend WithEvents txtFileName As System.Windows.Forms.TextBox
+    Friend WithEvents inFileName As System.Windows.Forms.TextBox
+    Friend WithEvents outFileName As System.Windows.Forms.TextBox
     Friend WithEvents Label12 As System.Windows.Forms.Label
-    Friend WithEvents btnBrowse As System.Windows.Forms.Button
+    Friend WithEvents btnBrowseInput As System.Windows.Forms.Button
     Friend WithEvents OpenFileDialog1 As System.Windows.Forms.OpenFileDialog
     Friend WithEvents txtData As System.Windows.Forms.TextBox
     Friend WithEvents lblVersion As System.Windows.Forms.Label
@@ -1514,8 +1520,9 @@ End Sub
     Friend WithEvents txtPeak As System.Windows.Forms.TextBox
     Friend WithEvents btnHoleDiameterMeasurement As System.Windows.Forms.Button
     Friend WithEvents btnProcessData As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btnBrowseOutput As System.Windows.Forms.Button
     Friend WithEvents Label37 As System.Windows.Forms.Label
     Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
+    Friend WithEvents OpenFileDialog2 As System.Windows.Forms.OpenFileDialog
 
 End Class

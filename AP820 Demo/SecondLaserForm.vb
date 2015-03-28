@@ -521,7 +521,7 @@ Public Class SecondLaserForm
         Dim StrBldr As New System.Text.StringBuilder(4096)
         Dim StrWriter As New System.IO.StringWriter(StrBldr)
         Dim StreamWtr As System.IO.StreamWriter = Nothing
-        Dim SendToFile As Boolean = SendToFileFlag And ValidFileNameFlag
+        Dim SendToFile As Boolean = SendToFileFlag And ValidOutFileNameFlag
 
         'To convert from raw data to mm, 
         'Xmm = (Xraw * (ScanRangeEnd * 0.1)/ 4096)
@@ -610,7 +610,7 @@ Public Class SecondLaserForm
         Dim StrBldr As New System.Text.StringBuilder(4096)
         Dim StrWriter As New System.IO.StringWriter(StrBldr)
         Dim StreamWtr As System.IO.StreamWriter = Nothing
-        Dim SendToFile As Boolean = SendToFileFlag And ValidFileNameFlag
+        Dim SendToFile As Boolean = SendToFileFlag And ValidOutFileNameFlag
 
         'To convert from raw data to mm, 
         'Xmm = (Xraw * (ScanRangeEnd * 0.1)/ 4096)
@@ -766,7 +766,7 @@ Public Class SecondLaserForm
         Dim StrBldr As New System.Text.StringBuilder(4096)
         Dim StrWriter As New System.IO.StringWriter(StrBldr)
         Dim StreamWtr As System.IO.StreamWriter = Nothing
-        Dim SendToFile As Boolean = SendToFileFlag And ValidFileNameFlag
+        Dim SendToFile As Boolean = SendToFileFlag And ValidInFileNameFlag
 
         'To convert from raw data to mm, 
         'Xmm = (Xraw * (ScanRangeEnd * 0.1)/ 4096)
