@@ -130,18 +130,21 @@ Partial Class Form1
         Me.txtPeakPos = New System.Windows.Forms.TextBox()
         Me.txtPeak = New System.Windows.Forms.TextBox()
         Me.btnHoleDiameterMeasurement = New System.Windows.Forms.Button()
-        Me.GraphControl1 = New AP820_Demo.GraphControl()
         Me.btnProcessData = New System.Windows.Forms.Button()
-        Me.gbScansWithEncoder.SuspendLayout
-        Me.gbLaserParams.SuspendLayout
-        Me.gbConnect.SuspendLayout
-        Me.gpGetInfo.SuspendLayout
-        Me.gbTriggerMode.SuspendLayout
-        Me.gbContinuousModeScans.SuspendLayout
-        Me.gbTriggerModeScans.SuspendLayout
-        Me.gbThickness.SuspendLayout
-        Me.gbPeakCalc.SuspendLayout
-        Me.SuspendLayout
+        Me.GraphControl1 = New AP820_Demo.GraphControl()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label37 = New System.Windows.Forms.Label()
+        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.gbScansWithEncoder.SuspendLayout()
+        Me.gbLaserParams.SuspendLayout()
+        Me.gbConnect.SuspendLayout()
+        Me.gpGetInfo.SuspendLayout()
+        Me.gbTriggerMode.SuspendLayout()
+        Me.gbContinuousModeScans.SuspendLayout()
+        Me.gbTriggerModeScans.SuspendLayout()
+        Me.gbThickness.SuspendLayout()
+        Me.gbPeakCalc.SuspendLayout()
+        Me.SuspendLayout()
         '
         'btnGetVersion
         '
@@ -151,7 +154,7 @@ Partial Class Form1
         Me.btnGetVersion.Size = New System.Drawing.Size(237, 34)
         Me.btnGetVersion.TabIndex = 6
         Me.btnGetVersion.Text = "Get DLL Version"
-        Me.btnGetVersion.UseVisualStyleBackColor = true
+        Me.btnGetVersion.UseVisualStyleBackColor = True
         '
         'txtVersion
         '
@@ -169,11 +172,11 @@ Partial Class Form1
         Me.btnGetInfo.Size = New System.Drawing.Size(237, 34)
         Me.btnGetInfo.TabIndex = 14
         Me.btnGetInfo.Text = "Get Info"
-        Me.btnGetInfo.UseVisualStyleBackColor = true
+        Me.btnGetInfo.UseVisualStyleBackColor = True
         '
         'Label5
         '
-        Me.Label5.AutoSize = true
+        Me.Label5.AutoSize = True
         Me.Label5.Location = New System.Drawing.Point(1493, 114)
         Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label5.Name = "Label5"
@@ -196,7 +199,7 @@ Partial Class Form1
         Me.txtImageNumber.Location = New System.Drawing.Point(124, 470)
         Me.txtImageNumber.Margin = New System.Windows.Forms.Padding(4)
         Me.txtImageNumber.Name = "txtImageNumber"
-        Me.txtImageNumber.ReadOnly = true
+        Me.txtImageNumber.ReadOnly = True
         Me.txtImageNumber.Size = New System.Drawing.Size(164, 22)
         Me.txtImageNumber.TabIndex = 28
         '
@@ -215,13 +218,13 @@ Partial Class Form1
         Me.txtImageNumber2.Location = New System.Drawing.Point(439, 470)
         Me.txtImageNumber2.Margin = New System.Windows.Forms.Padding(4)
         Me.txtImageNumber2.Name = "txtImageNumber2"
-        Me.txtImageNumber2.ReadOnly = true
+        Me.txtImageNumber2.ReadOnly = True
         Me.txtImageNumber2.Size = New System.Drawing.Size(164, 22)
         Me.txtImageNumber2.TabIndex = 30
         '
         'lstEthernetScanInfo
         '
-        Me.lstEthernetScanInfo.FormattingEnabled = true
+        Me.lstEthernetScanInfo.FormattingEnabled = True
         Me.lstEthernetScanInfo.ItemHeight = 16
         Me.lstEthernetScanInfo.Location = New System.Drawing.Point(613, 154)
         Me.lstEthernetScanInfo.Margin = New System.Windows.Forms.Padding(4)
@@ -231,7 +234,7 @@ Partial Class Form1
         '
         'Label7
         '
-        Me.Label7.AutoSize = true
+        Me.Label7.AutoSize = True
         Me.Label7.Location = New System.Drawing.Point(612, 129)
         Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label7.Name = "Label7"
@@ -241,8 +244,8 @@ Partial Class Form1
         '
         'Label8
         '
-        Me.Label8.AutoSize = true
-        Me.Label8.Location = New System.Drawing.Point(1248, 114)
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(1248, 106)
         Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label8.Name = "Label8"
         Me.Label8.Size = New System.Drawing.Size(42, 17)
@@ -257,11 +260,11 @@ Partial Class Form1
         Me.btnGetInfoFromData.Size = New System.Drawing.Size(237, 34)
         Me.btnGetInfoFromData.TabIndex = 46
         Me.btnGetInfoFromData.Text = "Get Info From Data Buffer"
-        Me.btnGetInfoFromData.UseVisualStyleBackColor = true
+        Me.btnGetInfoFromData.UseVisualStyleBackColor = True
         '
         'lstInfoFromDataBuffer
         '
-        Me.lstInfoFromDataBuffer.FormattingEnabled = true
+        Me.lstInfoFromDataBuffer.FormattingEnabled = True
         Me.lstInfoFromDataBuffer.ItemHeight = 16
         Me.lstInfoFromDataBuffer.Location = New System.Drawing.Point(932, 154)
         Me.lstInfoFromDataBuffer.Margin = New System.Windows.Forms.Padding(4)
@@ -271,7 +274,7 @@ Partial Class Form1
         '
         'Label10
         '
-        Me.Label10.AutoSize = true
+        Me.Label10.AutoSize = True
         Me.Label10.Location = New System.Drawing.Point(927, 129)
         Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label10.Name = "Label10"
@@ -287,26 +290,26 @@ Partial Class Form1
         Me.btnShowSecondLaserForm.Size = New System.Drawing.Size(237, 34)
         Me.btnShowSecondLaserForm.TabIndex = 59
         Me.btnShowSecondLaserForm.Text = "Show Second Laser Form"
-        Me.btnShowSecondLaserForm.UseVisualStyleBackColor = true
+        Me.btnShowSecondLaserForm.UseVisualStyleBackColor = True
         '
         'chkSendToFile
         '
-        Me.chkSendToFile.AutoSize = true
+        Me.chkSendToFile.AutoSize = True
         Me.chkSendToFile.Location = New System.Drawing.Point(717, 11)
         Me.chkSendToFile.Margin = New System.Windows.Forms.Padding(4)
         Me.chkSendToFile.Name = "chkSendToFile"
         Me.chkSendToFile.Size = New System.Drawing.Size(105, 21)
         Me.chkSendToFile.TabIndex = 60
         Me.chkSendToFile.Text = "Send to File"
-        Me.chkSendToFile.UseVisualStyleBackColor = true
+        Me.chkSendToFile.UseVisualStyleBackColor = True
         '
         'txtFileName
         '
         Me.txtFileName.Location = New System.Drawing.Point(717, 39)
         Me.txtFileName.Margin = New System.Windows.Forms.Padding(4)
         Me.txtFileName.Name = "txtFileName"
-        Me.txtFileName.ReadOnly = true
-        Me.txtFileName.Size = New System.Drawing.Size(749, 22)
+        Me.txtFileName.ReadOnly = True
+        Me.txtFileName.Size = New System.Drawing.Size(606, 22)
         Me.txtFileName.TabIndex = 61
         '
         'Label12
@@ -316,18 +319,18 @@ Partial Class Form1
         Me.Label12.Name = "Label12"
         Me.Label12.Size = New System.Drawing.Size(81, 44)
         Me.Label12.TabIndex = 62
-        Me.Label12.Text = "File Name:"
+        Me.Label12.Text = "Input File:"
         Me.Label12.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
         'btnBrowse
         '
-        Me.btnBrowse.Location = New System.Drawing.Point(717, 71)
+        Me.btnBrowse.Location = New System.Drawing.Point(1331, 39)
         Me.btnBrowse.Margin = New System.Windows.Forms.Padding(4)
         Me.btnBrowse.Name = "btnBrowse"
-        Me.btnBrowse.Size = New System.Drawing.Size(237, 34)
+        Me.btnBrowse.Size = New System.Drawing.Size(135, 22)
         Me.btnBrowse.TabIndex = 63
         Me.btnBrowse.Text = "Select File"
-        Me.btnBrowse.UseVisualStyleBackColor = true
+        Me.btnBrowse.UseVisualStyleBackColor = True
         '
         'OpenFileDialog1
         '
@@ -337,16 +340,16 @@ Partial Class Form1
         '
         Me.txtData.Location = New System.Drawing.Point(1258, 151)
         Me.txtData.Margin = New System.Windows.Forms.Padding(4)
-        Me.txtData.Multiline = true
+        Me.txtData.Multiline = True
         Me.txtData.Name = "txtData"
-        Me.txtData.ReadOnly = true
+        Me.txtData.ReadOnly = True
         Me.txtData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.txtData.Size = New System.Drawing.Size(219, 676)
         Me.txtData.TabIndex = 64
         '
         'lblVersion
         '
-        Me.lblVersion.AutoSize = true
+        Me.lblVersion.AutoSize = True
         Me.lblVersion.Location = New System.Drawing.Point(1619, 18)
         Me.lblVersion.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblVersion.Name = "lblVersion"
@@ -356,7 +359,7 @@ Partial Class Form1
         '
         'Label15
         '
-        Me.Label15.AutoSize = true
+        Me.Label15.AutoSize = True
         Me.Label15.Location = New System.Drawing.Point(1372, 134)
         Me.Label15.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label15.Name = "Label15"
@@ -366,7 +369,7 @@ Partial Class Form1
         '
         'Label14
         '
-        Me.Label14.AutoSize = true
+        Me.Label14.AutoSize = True
         Me.Label14.Location = New System.Drawing.Point(1335, 134)
         Me.Label14.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label14.Name = "Label14"
@@ -376,7 +379,7 @@ Partial Class Form1
         '
         'Label13
         '
-        Me.Label13.AutoSize = true
+        Me.Label13.AutoSize = True
         Me.Label13.Location = New System.Drawing.Point(1268, 134)
         Me.Label13.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label13.Name = "Label13"
@@ -399,12 +402,12 @@ Partial Class Form1
         Me.gbScansWithEncoder.Padding = New System.Windows.Forms.Padding(4)
         Me.gbScansWithEncoder.Size = New System.Drawing.Size(579, 166)
         Me.gbScansWithEncoder.TabIndex = 89
-        Me.gbScansWithEncoder.TabStop = false
+        Me.gbScansWithEncoder.TabStop = False
         Me.gbScansWithEncoder.Text = "Scans with an Encoder"
         '
         'Label23
         '
-        Me.Label23.AutoSize = true
+        Me.Label23.AutoSize = True
         Me.Label23.Location = New System.Drawing.Point(9, 20)
         Me.Label23.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label23.Name = "Label23"
@@ -420,7 +423,7 @@ Partial Class Form1
         Me.bthGetContinuousWithEnc.Size = New System.Drawing.Size(311, 34)
         Me.bthGetContinuousWithEnc.TabIndex = 88
         Me.bthGetContinuousWithEnc.Text = "Get Continuous Scans with Encoder"
-        Me.bthGetContinuousWithEnc.UseVisualStyleBackColor = true
+        Me.bthGetContinuousWithEnc.UseVisualStyleBackColor = True
         '
         'btnGetContinuousHardwareTriggeredWithEncoder
         '
@@ -430,7 +433,7 @@ Partial Class Form1
         Me.btnGetContinuousHardwareTriggeredWithEncoder.Size = New System.Drawing.Size(311, 34)
         Me.btnGetContinuousHardwareTriggeredWithEncoder.TabIndex = 87
         Me.btnGetContinuousHardwareTriggeredWithEncoder.Text = "Get Continuous Triggered with Encoder"
-        Me.btnGetContinuousHardwareTriggeredWithEncoder.UseVisualStyleBackColor = true
+        Me.btnGetContinuousHardwareTriggeredWithEncoder.UseVisualStyleBackColor = True
         '
         'btnStopEncoder
         '
@@ -440,7 +443,7 @@ Partial Class Form1
         Me.btnStopEncoder.Size = New System.Drawing.Size(237, 34)
         Me.btnStopEncoder.TabIndex = 86
         Me.btnStopEncoder.Text = "Stop Scans with Encoder"
-        Me.btnStopEncoder.UseVisualStyleBackColor = true
+        Me.btnStopEncoder.UseVisualStyleBackColor = True
         '
         'Label11
         '
@@ -457,7 +460,7 @@ Partial Class Form1
         Me.txtEncoderPos.Location = New System.Drawing.Point(416, 86)
         Me.txtEncoderPos.Margin = New System.Windows.Forms.Padding(4)
         Me.txtEncoderPos.Name = "txtEncoderPos"
-        Me.txtEncoderPos.ReadOnly = true
+        Me.txtEncoderPos.ReadOnly = True
         Me.txtEncoderPos.Size = New System.Drawing.Size(97, 22)
         Me.txtEncoderPos.TabIndex = 58
         '
@@ -469,7 +472,7 @@ Partial Class Form1
         Me.btnResetEncoder.Size = New System.Drawing.Size(237, 34)
         Me.btnResetEncoder.TabIndex = 57
         Me.btnResetEncoder.Text = "Reset Encoder"
-        Me.btnResetEncoder.UseVisualStyleBackColor = true
+        Me.btnResetEncoder.UseVisualStyleBackColor = True
         '
         'gbLaserParams
         '
@@ -487,7 +490,7 @@ Partial Class Form1
         Me.gbLaserParams.Padding = New System.Windows.Forms.Padding(4)
         Me.gbLaserParams.Size = New System.Drawing.Size(337, 288)
         Me.gbLaserParams.TabIndex = 90
-        Me.gbLaserParams.TabStop = false
+        Me.gbLaserParams.TabStop = False
         Me.gbLaserParams.Text = "Laser Control Parameters"
         '
         'txtMinZ
@@ -516,7 +519,7 @@ Partial Class Form1
         Me.btnSetMaxForZRange.Size = New System.Drawing.Size(237, 34)
         Me.btnSetMaxForZRange.TabIndex = 56
         Me.btnSetMaxForZRange.Text = "Set Maximum for Z Range"
-        Me.btnSetMaxForZRange.UseVisualStyleBackColor = true
+        Me.btnSetMaxForZRange.UseVisualStyleBackColor = True
         '
         'btnSetMinForZRange
         '
@@ -526,7 +529,7 @@ Partial Class Form1
         Me.btnSetMinForZRange.Size = New System.Drawing.Size(237, 34)
         Me.btnSetMinForZRange.TabIndex = 55
         Me.btnSetMinForZRange.Text = "Set Minimum for Z Range"
-        Me.btnSetMinForZRange.UseVisualStyleBackColor = true
+        Me.btnSetMinForZRange.UseVisualStyleBackColor = True
         '
         'btnTurnOffALF
         '
@@ -536,7 +539,7 @@ Partial Class Form1
         Me.btnTurnOffALF.Size = New System.Drawing.Size(237, 34)
         Me.btnTurnOffALF.TabIndex = 48
         Me.btnTurnOffALF.Text = "Turn Off Ambient Light Filter"
-        Me.btnTurnOffALF.UseVisualStyleBackColor = true
+        Me.btnTurnOffALF.UseVisualStyleBackColor = True
         '
         'btnTurnOffLaser
         '
@@ -546,7 +549,7 @@ Partial Class Form1
         Me.btnTurnOffLaser.Size = New System.Drawing.Size(237, 34)
         Me.btnTurnOffLaser.TabIndex = 47
         Me.btnTurnOffLaser.Text = "Turn Off Laser"
-        Me.btnTurnOffLaser.UseVisualStyleBackColor = true
+        Me.btnTurnOffLaser.UseVisualStyleBackColor = True
         '
         'btnTurnOnALF
         '
@@ -556,7 +559,7 @@ Partial Class Form1
         Me.btnTurnOnALF.Size = New System.Drawing.Size(237, 34)
         Me.btnTurnOnALF.TabIndex = 46
         Me.btnTurnOnALF.Text = "Turn On Ambient Light Filter"
-        Me.btnTurnOnALF.UseVisualStyleBackColor = true
+        Me.btnTurnOnALF.UseVisualStyleBackColor = True
         '
         'btnTurnOnLaser
         '
@@ -566,7 +569,7 @@ Partial Class Form1
         Me.btnTurnOnLaser.Size = New System.Drawing.Size(237, 34)
         Me.btnTurnOnLaser.TabIndex = 45
         Me.btnTurnOnLaser.Text = "Turn On Laser"
-        Me.btnTurnOnLaser.UseVisualStyleBackColor = true
+        Me.btnTurnOnLaser.UseVisualStyleBackColor = True
         '
         'gbConnect
         '
@@ -586,7 +589,7 @@ Partial Class Form1
         Me.gbConnect.Padding = New System.Windows.Forms.Padding(4)
         Me.gbConnect.Size = New System.Drawing.Size(579, 199)
         Me.gbConnect.TabIndex = 91
-        Me.gbConnect.TabStop = false
+        Me.gbConnect.TabStop = False
         Me.gbConnect.Text = "Connect with Laser"
         '
         'Label17
@@ -596,7 +599,7 @@ Partial Class Form1
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(509, 32)
         Me.Label17.TabIndex = 35
-        Me.Label17.Text = "Step 1:  Call the Connect function, and call GetConnectStatus to ensure that Conn"& _ 
+        Me.Label17.Text = "Step 1:  Call the Connect function, and call GetConnectStatus to ensure that Conn" & _
     "ect succeeded."
         '
         'btnGetStatus
@@ -607,7 +610,7 @@ Partial Class Form1
         Me.btnGetStatus.Size = New System.Drawing.Size(237, 34)
         Me.btnGetStatus.TabIndex = 34
         Me.btnGetStatus.Text = "Get Connection Status"
-        Me.btnGetStatus.UseVisualStyleBackColor = true
+        Me.btnGetStatus.UseVisualStyleBackColor = True
         '
         'Label6
         '
@@ -624,7 +627,7 @@ Partial Class Form1
         Me.txtStatus.Location = New System.Drawing.Point(371, 151)
         Me.txtStatus.Margin = New System.Windows.Forms.Padding(4)
         Me.txtStatus.Name = "txtStatus"
-        Me.txtStatus.ReadOnly = true
+        Me.txtStatus.ReadOnly = True
         Me.txtStatus.Size = New System.Drawing.Size(164, 22)
         Me.txtStatus.TabIndex = 32
         '
@@ -636,11 +639,11 @@ Partial Class Form1
         Me.btnDisconnect.Size = New System.Drawing.Size(237, 34)
         Me.btnDisconnect.TabIndex = 31
         Me.btnDisconnect.Text = "Disconnect"
-        Me.btnDisconnect.UseVisualStyleBackColor = true
+        Me.btnDisconnect.UseVisualStyleBackColor = True
         '
         'Label2
         '
-        Me.Label2.AutoSize = true
+        Me.Label2.AutoSize = True
         Me.Label2.Location = New System.Drawing.Point(324, 110)
         Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label2.Name = "Label2"
@@ -659,7 +662,7 @@ Partial Class Form1
         '
         'Label1
         '
-        Me.Label1.AutoSize = true
+        Me.Label1.AutoSize = True
         Me.Label1.Location = New System.Drawing.Point(20, 114)
         Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label1.Name = "Label1"
@@ -684,7 +687,7 @@ Partial Class Form1
         Me.btnConnect.Size = New System.Drawing.Size(237, 34)
         Me.btnConnect.TabIndex = 26
         Me.btnConnect.Text = "Connect"
-        Me.btnConnect.UseVisualStyleBackColor = true
+        Me.btnConnect.UseVisualStyleBackColor = True
         '
         'gpGetInfo
         '
@@ -697,7 +700,7 @@ Partial Class Form1
         Me.gpGetInfo.Padding = New System.Windows.Forms.Padding(4)
         Me.gpGetInfo.Size = New System.Drawing.Size(577, 116)
         Me.gpGetInfo.TabIndex = 92
-        Me.gpGetInfo.TabStop = false
+        Me.gpGetInfo.TabStop = False
         Me.gpGetInfo.Text = "Get Laser Parameters"
         '
         'Label18
@@ -707,7 +710,7 @@ Partial Class Form1
         Me.Label18.Name = "Label18"
         Me.Label18.Size = New System.Drawing.Size(495, 42)
         Me.Label18.TabIndex = 47
-        Me.Label18.Text = "Step 2:  Call the GetInfo function to get parameters from the laser required in c"& _ 
+        Me.Label18.Text = "Step 2:  Call the GetInfo function to get parameters from the laser required in c" & _
     "alculations, and to ensure the laser has the desired settings."
         '
         'gbTriggerMode
@@ -721,7 +724,7 @@ Partial Class Form1
         Me.gbTriggerMode.Padding = New System.Windows.Forms.Padding(4)
         Me.gbTriggerMode.Size = New System.Drawing.Size(580, 101)
         Me.gbTriggerMode.TabIndex = 93
-        Me.gbTriggerMode.TabStop = false
+        Me.gbTriggerMode.TabStop = False
         Me.gbTriggerMode.Text = "Trigger or Continuous mode"
         '
         'Label19
@@ -741,7 +744,7 @@ Partial Class Form1
         Me.btnContinuousMode.Size = New System.Drawing.Size(237, 34)
         Me.btnContinuousMode.TabIndex = 19
         Me.btnContinuousMode.Text = "Put in Continuous Mode"
-        Me.btnContinuousMode.UseVisualStyleBackColor = true
+        Me.btnContinuousMode.UseVisualStyleBackColor = True
         '
         'btnTriggerMode
         '
@@ -751,7 +754,7 @@ Partial Class Form1
         Me.btnTriggerMode.Size = New System.Drawing.Size(237, 34)
         Me.btnTriggerMode.TabIndex = 18
         Me.btnTriggerMode.Text = "Put in Trigger Mode"
-        Me.btnTriggerMode.UseVisualStyleBackColor = true
+        Me.btnTriggerMode.UseVisualStyleBackColor = True
         '
         'gbContinuousModeScans
         '
@@ -773,12 +776,12 @@ Partial Class Form1
         Me.gbContinuousModeScans.Padding = New System.Windows.Forms.Padding(4)
         Me.gbContinuousModeScans.Size = New System.Drawing.Size(579, 270)
         Me.gbContinuousModeScans.TabIndex = 94
-        Me.gbContinuousModeScans.TabStop = false
+        Me.gbContinuousModeScans.TabStop = False
         Me.gbContinuousModeScans.Text = "Get Scans in Continuous Mode"
         '
         'Label22
         '
-        Me.Label22.AutoSize = true
+        Me.Label22.AutoSize = True
         Me.Label22.Location = New System.Drawing.Point(24, 161)
         Me.Label22.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label22.Name = "Label22"
@@ -788,7 +791,7 @@ Partial Class Form1
         '
         'Label21
         '
-        Me.Label21.AutoSize = true
+        Me.Label21.AutoSize = True
         Me.Label21.Location = New System.Drawing.Point(19, 84)
         Me.Label21.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label21.Name = "Label21"
@@ -798,7 +801,7 @@ Partial Class Form1
         '
         'Label20
         '
-        Me.Label20.AutoSize = true
+        Me.Label20.AutoSize = True
         Me.Label20.Location = New System.Drawing.Point(9, 20)
         Me.Label20.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label20.Name = "Label20"
@@ -808,7 +811,7 @@ Partial Class Form1
         '
         'Label16
         '
-        Me.Label16.AutoSize = true
+        Me.Label16.AutoSize = True
         Me.Label16.Location = New System.Drawing.Point(300, 241)
         Me.Label16.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label16.Name = "Label16"
@@ -821,7 +824,7 @@ Partial Class Form1
         Me.txtSampleRate.Location = New System.Drawing.Point(459, 238)
         Me.txtSampleRate.Margin = New System.Windows.Forms.Padding(4)
         Me.txtSampleRate.Name = "txtSampleRate"
-        Me.txtSampleRate.ReadOnly = true
+        Me.txtSampleRate.ReadOnly = True
         Me.txtSampleRate.Size = New System.Drawing.Size(76, 22)
         Me.txtSampleRate.TabIndex = 95
         '
@@ -840,7 +843,7 @@ Partial Class Form1
         Me.txtDropped.Location = New System.Drawing.Point(459, 198)
         Me.txtDropped.Margin = New System.Windows.Forms.Padding(4)
         Me.txtDropped.Name = "txtDropped"
-        Me.txtDropped.ReadOnly = true
+        Me.txtDropped.ReadOnly = True
         Me.txtDropped.Size = New System.Drawing.Size(76, 22)
         Me.txtDropped.TabIndex = 93
         '
@@ -852,7 +855,7 @@ Partial Class Form1
         Me.btnGetContinuousOptimized.Size = New System.Drawing.Size(311, 34)
         Me.btnGetContinuousOptimized.TabIndex = 92
         Me.btnGetContinuousOptimized.Text = "Get Continuous Scans Optimized for Speed"
-        Me.btnGetContinuousOptimized.UseVisualStyleBackColor = true
+        Me.btnGetContinuousOptimized.UseVisualStyleBackColor = True
         '
         'btnStopContinuous
         '
@@ -862,7 +865,7 @@ Partial Class Form1
         Me.btnStopContinuous.Size = New System.Drawing.Size(237, 34)
         Me.btnStopContinuous.TabIndex = 91
         Me.btnStopContinuous.Text = "Stop Continuous Scans"
-        Me.btnStopContinuous.UseVisualStyleBackColor = true
+        Me.btnStopContinuous.UseVisualStyleBackColor = True
         '
         'btnGetContinuousScans
         '
@@ -872,7 +875,7 @@ Partial Class Form1
         Me.btnGetContinuousScans.Size = New System.Drawing.Size(237, 34)
         Me.btnGetContinuousScans.TabIndex = 90
         Me.btnGetContinuousScans.Text = "Get Continuous Scans"
-        Me.btnGetContinuousScans.UseVisualStyleBackColor = true
+        Me.btnGetContinuousScans.UseVisualStyleBackColor = True
         '
         'btnSingleScan
         '
@@ -882,7 +885,7 @@ Partial Class Form1
         Me.btnSingleScan.Size = New System.Drawing.Size(237, 34)
         Me.btnSingleScan.TabIndex = 89
         Me.btnSingleScan.Text = "Get Single Scan"
-        Me.btnSingleScan.UseVisualStyleBackColor = true
+        Me.btnSingleScan.UseVisualStyleBackColor = True
         '
         'btnGetInterleaved
         '
@@ -892,7 +895,7 @@ Partial Class Form1
         Me.btnGetInterleaved.Size = New System.Drawing.Size(237, 34)
         Me.btnGetInterleaved.TabIndex = 88
         Me.btnGetInterleaved.Text = "Get Interleaved Scan"
-        Me.btnGetInterleaved.UseVisualStyleBackColor = true
+        Me.btnGetInterleaved.UseVisualStyleBackColor = True
         '
         'gbTriggerModeScans
         '
@@ -911,12 +914,12 @@ Partial Class Form1
         Me.gbTriggerModeScans.Padding = New System.Windows.Forms.Padding(4)
         Me.gbTriggerModeScans.Size = New System.Drawing.Size(580, 225)
         Me.gbTriggerModeScans.TabIndex = 95
-        Me.gbTriggerModeScans.TabStop = false
+        Me.gbTriggerModeScans.TabStop = False
         Me.gbTriggerModeScans.Text = "Get Scans in Trigger Mode"
         '
         'Label25
         '
-        Me.Label25.AutoSize = true
+        Me.Label25.AutoSize = True
         Me.Label25.Location = New System.Drawing.Point(13, 162)
         Me.Label25.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label25.Name = "Label25"
@@ -926,7 +929,7 @@ Partial Class Form1
         '
         'Label24
         '
-        Me.Label24.AutoSize = true
+        Me.Label24.AutoSize = True
         Me.Label24.Location = New System.Drawing.Point(8, 20)
         Me.Label24.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label24.Name = "Label24"
@@ -942,7 +945,7 @@ Partial Class Form1
         Me.btnSendSoftwareTrigger.Size = New System.Drawing.Size(237, 34)
         Me.btnSendSoftwareTrigger.TabIndex = 57
         Me.btnSendSoftwareTrigger.Text = "Generate Software Trigger"
-        Me.btnSendSoftwareTrigger.UseVisualStyleBackColor = true
+        Me.btnSendSoftwareTrigger.UseVisualStyleBackColor = True
         '
         'btnGetContinuousHardwareTriggeredScans
         '
@@ -952,22 +955,22 @@ Partial Class Form1
         Me.btnGetContinuousHardwareTriggeredScans.Size = New System.Drawing.Size(311, 34)
         Me.btnGetContinuousHardwareTriggeredScans.TabIndex = 56
         Me.btnGetContinuousHardwareTriggeredScans.Text = "Get Continuous Hardware-Triggered Scans"
-        Me.btnGetContinuousHardwareTriggeredScans.UseVisualStyleBackColor = true
+        Me.btnGetContinuousHardwareTriggeredScans.UseVisualStyleBackColor = True
         '
         'lblDataReceived
         '
-        Me.lblDataReceived.AutoSize = true
+        Me.lblDataReceived.AutoSize = True
         Me.lblDataReceived.Location = New System.Drawing.Point(25, 94)
         Me.lblDataReceived.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.lblDataReceived.Name = "lblDataReceived"
         Me.lblDataReceived.Size = New System.Drawing.Size(101, 17)
         Me.lblDataReceived.TabIndex = 55
         Me.lblDataReceived.Text = "Data Received"
-        Me.lblDataReceived.Visible = false
+        Me.lblDataReceived.Visible = False
         '
         'lblWaitingForTrigger
         '
-        Me.lblWaitingForTrigger.AutoSize = true
+        Me.lblWaitingForTrigger.AutoSize = True
         Me.lblWaitingForTrigger.ForeColor = System.Drawing.Color.Red
         Me.lblWaitingForTrigger.Location = New System.Drawing.Point(25, 94)
         Me.lblWaitingForTrigger.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
@@ -975,7 +978,7 @@ Partial Class Form1
         Me.lblWaitingForTrigger.Size = New System.Drawing.Size(203, 17)
         Me.lblWaitingForTrigger.TabIndex = 54
         Me.lblWaitingForTrigger.Text = "Waiting for Hardware Trigger..."
-        Me.lblWaitingForTrigger.Visible = false
+        Me.lblWaitingForTrigger.Visible = False
         '
         'btnStopTrigger
         '
@@ -985,7 +988,7 @@ Partial Class Form1
         Me.btnStopTrigger.Size = New System.Drawing.Size(237, 34)
         Me.btnStopTrigger.TabIndex = 53
         Me.btnStopTrigger.Text = "Stop Hardware-Triggered Scan"
-        Me.btnStopTrigger.UseVisualStyleBackColor = true
+        Me.btnStopTrigger.UseVisualStyleBackColor = True
         '
         'btnSingleHardwareTrigger
         '
@@ -995,7 +998,7 @@ Partial Class Form1
         Me.btnSingleHardwareTrigger.Size = New System.Drawing.Size(237, 34)
         Me.btnSingleHardwareTrigger.TabIndex = 52
         Me.btnSingleHardwareTrigger.Text = "Get Hardware-Triggered Scan"
-        Me.btnSingleHardwareTrigger.UseVisualStyleBackColor = true
+        Me.btnSingleHardwareTrigger.UseVisualStyleBackColor = True
         '
         'btnSendTrigger
         '
@@ -1005,11 +1008,11 @@ Partial Class Form1
         Me.btnSendTrigger.Size = New System.Drawing.Size(237, 34)
         Me.btnSendTrigger.TabIndex = 51
         Me.btnSendTrigger.Text = "Get Software Triggered Scan"
-        Me.btnSendTrigger.UseVisualStyleBackColor = true
+        Me.btnSendTrigger.UseVisualStyleBackColor = True
         '
         'Label26
         '
-        Me.Label26.AutoSize = true
+        Me.Label26.AutoSize = True
         Me.Label26.Location = New System.Drawing.Point(835, 12)
         Me.Label26.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label26.Name = "Label26"
@@ -1019,7 +1022,7 @@ Partial Class Form1
         '
         'Label27
         '
-        Me.Label27.AutoSize = true
+        Me.Label27.AutoSize = True
         Me.Label27.Location = New System.Drawing.Point(1484, 1143)
         Me.Label27.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label27.Name = "Label27"
@@ -1049,7 +1052,7 @@ Partial Class Form1
         Me.gbThickness.Padding = New System.Windows.Forms.Padding(4)
         Me.gbThickness.Size = New System.Drawing.Size(337, 356)
         Me.gbThickness.TabIndex = 98
-        Me.gbThickness.TabStop = false
+        Me.gbThickness.TabStop = False
         Me.gbThickness.Text = "Width / Gap Measurement"
         '
         'btnGetGapScans
@@ -1060,11 +1063,11 @@ Partial Class Form1
         Me.btnGetGapScans.Size = New System.Drawing.Size(237, 34)
         Me.btnGetGapScans.TabIndex = 100
         Me.btnGetGapScans.Text = "Get Gap Continuously"
-        Me.btnGetGapScans.UseVisualStyleBackColor = true
+        Me.btnGetGapScans.UseVisualStyleBackColor = True
         '
         'Label33
         '
-        Me.Label33.AutoSize = true
+        Me.Label33.AutoSize = True
         Me.Label33.Location = New System.Drawing.Point(89, 320)
         Me.Label33.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label33.Name = "Label33"
@@ -1074,7 +1077,7 @@ Partial Class Form1
         '
         'Label32
         '
-        Me.Label32.AutoSize = true
+        Me.Label32.AutoSize = True
         Me.Label32.Location = New System.Drawing.Point(103, 284)
         Me.Label32.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label32.Name = "Label32"
@@ -1084,7 +1087,7 @@ Partial Class Form1
         '
         'Label31
         '
-        Me.Label31.AutoSize = true
+        Me.Label31.AutoSize = True
         Me.Label31.Location = New System.Drawing.Point(112, 250)
         Me.Label31.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label31.Name = "Label31"
@@ -1097,7 +1100,7 @@ Partial Class Form1
         Me.txtWidth.Location = New System.Drawing.Point(195, 316)
         Me.txtWidth.Margin = New System.Windows.Forms.Padding(4)
         Me.txtWidth.Name = "txtWidth"
-        Me.txtWidth.ReadOnly = true
+        Me.txtWidth.ReadOnly = True
         Me.txtWidth.Size = New System.Drawing.Size(76, 22)
         Me.txtWidth.TabIndex = 96
         '
@@ -1106,7 +1109,7 @@ Partial Class Form1
         Me.txtRightEdge.Location = New System.Drawing.Point(195, 281)
         Me.txtRightEdge.Margin = New System.Windows.Forms.Padding(4)
         Me.txtRightEdge.Name = "txtRightEdge"
-        Me.txtRightEdge.ReadOnly = true
+        Me.txtRightEdge.ReadOnly = True
         Me.txtRightEdge.Size = New System.Drawing.Size(76, 22)
         Me.txtRightEdge.TabIndex = 95
         '
@@ -1115,7 +1118,7 @@ Partial Class Form1
         Me.txtLeftEdge.Location = New System.Drawing.Point(195, 246)
         Me.txtLeftEdge.Margin = New System.Windows.Forms.Padding(4)
         Me.txtLeftEdge.Name = "txtLeftEdge"
-        Me.txtLeftEdge.ReadOnly = true
+        Me.txtLeftEdge.ReadOnly = True
         Me.txtLeftEdge.Size = New System.Drawing.Size(76, 22)
         Me.txtLeftEdge.TabIndex = 94
         '
@@ -1127,7 +1130,7 @@ Partial Class Form1
         Me.btnStopContinuousRealWorldExampleScans.Size = New System.Drawing.Size(237, 34)
         Me.btnStopContinuousRealWorldExampleScans.TabIndex = 92
         Me.btnStopContinuousRealWorldExampleScans.Text = "Stop Continuous Scans"
-        Me.btnStopContinuousRealWorldExampleScans.UseVisualStyleBackColor = true
+        Me.btnStopContinuousRealWorldExampleScans.UseVisualStyleBackColor = True
         '
         'btnGetWidthContinuously
         '
@@ -1137,11 +1140,11 @@ Partial Class Form1
         Me.btnGetWidthContinuously.Size = New System.Drawing.Size(237, 34)
         Me.btnGetWidthContinuously.TabIndex = 91
         Me.btnGetWidthContinuously.Text = "Get Width Continuously"
-        Me.btnGetWidthContinuously.UseVisualStyleBackColor = true
+        Me.btnGetWidthContinuously.UseVisualStyleBackColor = True
         '
         'Label30
         '
-        Me.Label30.AutoSize = true
+        Me.Label30.AutoSize = True
         Me.Label30.Location = New System.Drawing.Point(257, 81)
         Me.Label30.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label30.Name = "Label30"
@@ -1151,7 +1154,7 @@ Partial Class Form1
         '
         'Label29
         '
-        Me.Label29.AutoSize = true
+        Me.Label29.AutoSize = True
         Me.Label29.Location = New System.Drawing.Point(11, 81)
         Me.Label29.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label29.Name = "Label29"
@@ -1189,8 +1192,8 @@ Partial Class Form1
         '
         'Label34
         '
-        Me.Label34.AutoSize = true
-        Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.Label34.AutoSize = True
+        Me.Label34.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label34.Location = New System.Drawing.Point(1493, 470)
         Me.Label34.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label34.Name = "Label34"
@@ -1212,7 +1215,7 @@ Partial Class Form1
         Me.gbPeakCalc.Padding = New System.Windows.Forms.Padding(4)
         Me.gbPeakCalc.Size = New System.Drawing.Size(329, 218)
         Me.gbPeakCalc.TabIndex = 100
-        Me.gbPeakCalc.TabStop = false
+        Me.gbPeakCalc.TabStop = False
         Me.gbPeakCalc.Text = "Peak Calculation"
         '
         'btnGetPeakScans
@@ -1223,7 +1226,7 @@ Partial Class Form1
         Me.btnGetPeakScans.Size = New System.Drawing.Size(237, 34)
         Me.btnGetPeakScans.TabIndex = 101
         Me.btnGetPeakScans.Text = "Get Peak Height and Position "
-        Me.btnGetPeakScans.UseVisualStyleBackColor = true
+        Me.btnGetPeakScans.UseVisualStyleBackColor = True
         '
         'btnStopPeakScans
         '
@@ -1233,11 +1236,11 @@ Partial Class Form1
         Me.btnStopPeakScans.Size = New System.Drawing.Size(237, 34)
         Me.btnStopPeakScans.TabIndex = 100
         Me.btnStopPeakScans.Text = "Stop Continuous Scans"
-        Me.btnStopPeakScans.UseVisualStyleBackColor = true
+        Me.btnStopPeakScans.UseVisualStyleBackColor = True
         '
         'Label36
         '
-        Me.Label36.AutoSize = true
+        Me.Label36.AutoSize = True
         Me.Label36.Location = New System.Drawing.Point(77, 190)
         Me.Label36.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label36.Name = "Label36"
@@ -1247,7 +1250,7 @@ Partial Class Form1
         '
         'Label35
         '
-        Me.Label35.AutoSize = true
+        Me.Label35.AutoSize = True
         Me.Label35.Location = New System.Drawing.Point(133, 158)
         Me.Label35.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
         Me.Label35.Name = "Label35"
@@ -1260,7 +1263,7 @@ Partial Class Form1
         Me.txtPeakPos.Location = New System.Drawing.Point(189, 186)
         Me.txtPeakPos.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPeakPos.Name = "txtPeakPos"
-        Me.txtPeakPos.ReadOnly = true
+        Me.txtPeakPos.ReadOnly = True
         Me.txtPeakPos.Size = New System.Drawing.Size(76, 22)
         Me.txtPeakPos.TabIndex = 96
         '
@@ -1269,7 +1272,7 @@ Partial Class Form1
         Me.txtPeak.Location = New System.Drawing.Point(189, 154)
         Me.txtPeak.Margin = New System.Windows.Forms.Padding(4)
         Me.txtPeak.Name = "txtPeak"
-        Me.txtPeak.ReadOnly = true
+        Me.txtPeak.ReadOnly = True
         Me.txtPeak.Size = New System.Drawing.Size(76, 22)
         Me.txtPeak.TabIndex = 95
         '
@@ -1281,7 +1284,17 @@ Partial Class Form1
         Me.btnHoleDiameterMeasurement.Size = New System.Drawing.Size(237, 34)
         Me.btnHoleDiameterMeasurement.TabIndex = 102
         Me.btnHoleDiameterMeasurement.Text = "Hole Diameter Measurement"
-        Me.btnHoleDiameterMeasurement.UseVisualStyleBackColor = true
+        Me.btnHoleDiameterMeasurement.UseVisualStyleBackColor = True
+        '
+        'btnProcessData
+        '
+        Me.btnProcessData.Location = New System.Drawing.Point(1331, 98)
+        Me.btnProcessData.Margin = New System.Windows.Forms.Padding(4)
+        Me.btnProcessData.Name = "btnProcessData"
+        Me.btnProcessData.Size = New System.Drawing.Size(135, 28)
+        Me.btnProcessData.TabIndex = 103
+        Me.btnProcessData.Text = "Process!"
+        Me.btnProcessData.UseVisualStyleBackColor = True
         '
         'GraphControl1
         '
@@ -1292,22 +1305,44 @@ Partial Class Form1
         Me.GraphControl1.TabIndex = 88
         Me.GraphControl1.Text = "GraphControl1"
         '
-        'btnProcessData
+        'Button1
         '
-        Me.btnProcessData.Location = New System.Drawing.Point(1258, 71)
-        Me.btnProcessData.Margin = New System.Windows.Forms.Padding(4)
-        Me.btnProcessData.Name = "btnProcessData"
-        Me.btnProcessData.Size = New System.Drawing.Size(208, 34)
-        Me.btnProcessData.TabIndex = 103
-        Me.btnProcessData.Text = "Process!"
-        Me.btnProcessData.UseVisualStyleBackColor = true
+        Me.Button1.Location = New System.Drawing.Point(1331, 69)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(135, 22)
+        Me.Button1.TabIndex = 106
+        Me.Button1.Text = "Select File"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label37
+        '
+        Me.Label37.Location = New System.Drawing.Point(628, 58)
+        Me.Label37.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label37.Name = "Label37"
+        Me.Label37.Size = New System.Drawing.Size(81, 44)
+        Me.Label37.TabIndex = 105
+        Me.Label37.Text = "Output File:"
+        Me.Label37.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'TextBox1
+        '
+        Me.TextBox1.Location = New System.Drawing.Point(717, 69)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TextBox1.Name = "TextBox1"
+        Me.TextBox1.ReadOnly = True
+        Me.TextBox1.Size = New System.Drawing.Size(606, 22)
+        Me.TextBox1.TabIndex = 104
         '
         'Form1
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8!, 16!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.AutoScroll = true
-        Me.ClientSize = New System.Drawing.Size(1821, 1037)
+        Me.AutoScroll = True
+        Me.ClientSize = New System.Drawing.Size(1906, 1037)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Label37)
+        Me.Controls.Add(Me.TextBox1)
         Me.Controls.Add(Me.btnProcessData)
         Me.Controls.Add(Me.btnHoleDiameterMeasurement)
         Me.Controls.Add(Me.gbPeakCalc)
@@ -1479,5 +1514,8 @@ End Sub
     Friend WithEvents txtPeak As System.Windows.Forms.TextBox
     Friend WithEvents btnHoleDiameterMeasurement As System.Windows.Forms.Button
     Friend WithEvents btnProcessData As System.Windows.Forms.Button
+    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents Label37 As System.Windows.Forms.Label
+    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
 
 End Class
