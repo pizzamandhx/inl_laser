@@ -27,17 +27,18 @@
     Private Function getHeight() As Integer 'Returns height of current data point in object'
         Return height
     End Function
-    Private Function setHeight() As Integer ''
+    Private Function setHeight() As Integer ''Allen
     End Function
     Private Function getLength() As Integer 'Returns '
         Return length
     End Function
-    Private Function setLength() As Integer ''
+    Private Function setLength() As Integer ''Jon
     End Function
     Private Function getVolume() As Integer ''
         Return volume
     End Function
-    Private Function setVolume() As Integer ''
+    Private Function setVolume() As Integer ''ME   May not be used because these only deal with one slice
+        'volume = width * length * height
     End Function
 
 
@@ -45,22 +46,24 @@
     Private Function getAvgWidth() As Integer 'Returns the average width'
         Return getAvgWidth
     End Function
-    Private Function setAvgWidth() As Integer ''
+    Private Function setAvgWidth() As Integer ''Jon
     End Function
     Private Function getAvgHeight() As Integer ''
         Return avgHeight
     End Function
-    Private Function setAvgHeight() As Integer ''
+    Private Function setAvgHeight() As Integer ''Allen
     End Function
     Private Function getAvgLength() As Integer ''
         Return avgLength
     End Function
-    Private Function setAvgLength() As Integer ''
+    Private Function setAvgLength() As Integer ''Jon
+
     End Function
     Private Function getAvgVolume() As Integer ''
         Return avgVolume
     End Function
-    Private Function setAvgVolume() As Integer ''
+    Private Function setAvgVolume() As Integer ''ME Takes the average width, lenght, and height and gives you an average volume from that.
+        'avgVolume = avgWidth * avgHeight * avgLenght
     End Function
 
 
@@ -68,22 +71,24 @@
     Private Function getMaxWidth() As Double 'Returs the Max Width'
         Return getMaxWidth
     End Function
-    Private Function setMaxWidth() As Double 'Takes left edge and right edge to calculate the width'
+    Private Function setMaxWidth() As Double 'Takes left edge and right edge to calculate the width'     Allen
     End Function
     Private Function getMaxHeight() As Double 'Returns Max Height'
         Return maxHeight
     End Function
-    Private Function setMaxHeight() As Double 'Takes the Max Z coordinate and takes the highest of the object and stores it'
+    Private Function setMaxHeight() As Double 'Takes the Max Z coordinate and takes the highest of the object and stores it'    ME
+        'if getHeight() > maxHeight
+        '   maxHeight == getHeight()
     End Function
     Private Function getMaxLength() As Double 'Returns Max length'
         Return maxLength
     End Function
-    Private Function setMaxLength() As Double 'Uses the encoder data and finds the Longest part of the object and stores it'
+    Private Function setMaxLength() As Double 'Uses the encoder data and finds the Longest part of the object and stores it'  Jon
     End Function
     Private Function getMaxVolume() As Double 'Returns the Max Volume'
         Return maxVolume
     End Function
-    Private Function setMaxVolume() As Double 'Compute the volume using Max Height, Max Length, and Max Width every time this runs
+    Private Function setMaxVolume() As Double 'Compute the volume using Max Height, Max Length, and Max Width every time this runs  Allen
     End Function
 
 
