@@ -1,4 +1,8 @@
-﻿Public Class BiomassClass
+﻿Imports System.IO
+Imports System.String
+Imports System.Collections.Generic
+
+Public Class BiomassClass
     Private width As Double
     Private avgWidth As Double
     Private maxWidth As Double
@@ -17,6 +21,8 @@
 
     Private leftEdgeLoc As Integer
     Private rightEdgeLoc As Integer
+
+    Private complete As Boolean
     Private Function getWidth() As Integer 'Returns width of the current slice'
         Return width
     End Function

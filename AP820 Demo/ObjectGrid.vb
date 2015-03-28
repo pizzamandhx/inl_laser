@@ -3,7 +3,7 @@
         Dim x As Double
         Dim y As Double
         Dim z As Double
-        Dim i As Double
+        Dim i As Integer
     End Structure
 
     'Public 

@@ -73,3 +73,10 @@ C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\bin\Debug\AP820 Demo.exe.con
 C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.exe
 C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.xml
 C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.pdb
+C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\obj\Debug\AP820_Demo.Form1.resources
+C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\obj\Debug\AP820_Demo.Resources.resources
+C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\obj\Debug\AP820_Demo.SecondLaserForm.resources
+C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.vbproj.GenerateResource.Cache
+C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\bin\Debug\AP820 Demo.exe
+C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\bin\Debug\AP820 Demo.pdb
+C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\bin\Debug\AP820 Demo.xml
