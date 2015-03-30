@@ -63,19 +63,20 @@ Public Class Form1
         Dim slice(BLOCKSIZE) As Point
 
         slice = fileIn(Convert.ToString(inFileName.Text)) 'Open the file, start reading slices
+        fileOut(Convert.ToString(outFileName.Text), slice)
 
         'For loop that scans a single slice of data to find the left edge of the object.
         j = 0
         k = 0
-        For i = k To BLOCKSIZE 'size is 580 (0 to 579)
+        'For i = k To BLOCKSIZE 'size is 580 (0 to 579)
 
-            ''''''Once we find that the Z data is higher than the conveyor belt, store that point. That is the left edge.
-            'If (zDataPoint > ConveyorHeight && zDataPoint - 1 == Conveyor Height && Intensity >=250)
-            'Set leftEdgeLoc to the first point where it is true, and then return
-            '
-            ' 
-            'On subsequent loops through the scan of data always find the first edge (which may not be the first edge)
-        Next i
+        '    ''''''Once we find that the Z data is higher than the conveyor belt, store that point. That is the left edge.
+        '    'If (zDataPoint > ConveyorHeight && zDataPoint - 1 == Conveyor Height && Intensity >=250)
+        '    'Set leftEdgeLoc to the first point where it is true, and then return
+        '    '
+        '    ' 
+        '    'On subsequent loops through the scan of data always find the first edge (which may not be the first edge)
+        'Next i
         'Return all the LeftEdge's of every object for that scan
     End Sub
 
@@ -92,8 +93,8 @@ Public Class Form1
         Dim sr As StreamReader
 
         'In
-        If Filename <> "" Then
-            file.OpenText(Filename)
+        If fileName <> "" Then
+            sr = File.OpenText(fileName)
             Do While sr.Peek >= 0
                 encoder = sr.ReadLine
                 If encoder <> "" Then
@@ -138,18 +139,9 @@ Public Class Form1
         Else
             MsgBox("No input filename specified!", MsgBoxStyle.Exclamation)
         End If
-
-        'RichTextBox1.Text = cheese
-        'For i = 0 To slice.Length - 1
-        '    out += Convert.ToString(slice(i).x) + "," + Convert.ToString(slice(i).y) + "," + Convert.ToString(slice(i).z) + "," + Convert.ToString(slice(i).i) + "," + vbCrLf
-        'Next
-        ''Out
-        'Using srw As New StreamWriter(path2)
-        '    srw.Write(out)
-        'End Using
     End Function
 
-    Private Function fileOut(ByVal fileName As String, ByRef val As Point())
+    Private Function fileOut(ByVal fileName As String, ByVal val() As Point)
         Dim curPoint As String = ""
         'Dim i As Integer
 
@@ -321,7 +313,7 @@ Public Class Form1
         Dim StrBldr As New System.Text.StringBuilder(4096)
         Dim strw As New System.IO.StringWriter(StrBldr)
         Dim StreamWtr As System.IO.StreamWriter = Nothing
-        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidInFileNameFlag
+        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidOutFileNameFlag
 
         'This is the simplest example.  It gets the lastest, single scan from the laser, scales
         'the data, displays it, and ends.
@@ -392,7 +384,7 @@ Public Class Form1
         Dim StrBldr As New System.Text.StringBuilder(4096)
         Dim strw As New System.IO.StringWriter(StrBldr)
         Dim StreamWtr As System.IO.StreamWriter = Nothing
-        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidInFileNameFlag
+        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidOutFileNameFlag
 
         'This is the same simple example as the GetSingleScan function, except that this calls GetInterleavedData
         'which returns two interleaved scans and put them in order.
@@ -471,7 +463,7 @@ Public Class Form1
         Dim StrBldr As New System.Text.StringBuilder(4096)
         Dim strw As New System.IO.StringWriter(StrBldr)
         Dim StreamWtr As System.IO.StreamWriter = Nothing
-        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidInFileNameFlag
+        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidOutFileNameFlag
 
         'This function is meant to be called in trigger mode, to show how software triggering works.
         'When the laser is in trigger mode, it does 2 interleaved scans, numbered 1 and 2, and the
@@ -794,7 +786,7 @@ Public Class Form1
         Dim StrBldr As New System.Text.StringBuilder(4096)
         Dim strw As New System.IO.StringWriter(StrBldr)
         Dim StreamWtr As System.IO.StreamWriter = Nothing
-        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidInFileNameFlag
+        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidOutFileNameFlag
 
         'Intended to run in its own thread
         'This functin is intended to be called in trigger mode.  GetInterleavedScan will return false until
@@ -897,7 +889,7 @@ Public Class Form1
         Dim StrBldr As New System.Text.StringBuilder(4096)
         Dim strw As New System.IO.StringWriter(StrBldr)
         Dim StreamWtr As System.IO.StreamWriter = Nothing
-        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidInFileNameFlag
+        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidOutFileNameFlag
 
         'Intended to run in its own thread
         'Stop button aborts this function
@@ -992,7 +984,7 @@ Public Class Form1
         Dim StrBldr As New System.Text.StringBuilder(4096)
         Dim strw As New System.IO.StringWriter(StrBldr)
         Dim StreamWtr As System.IO.StreamWriter = Nothing
-        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidInFileNameFlag
+        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidOutFileNameFlag
 
         'Intended to run in its own thread
         'Stop button aborts this function
@@ -1079,7 +1071,7 @@ Public Class Form1
         Dim StrBldr As New System.Text.StringBuilder(4096)
         Dim strw As New System.IO.StringWriter(StrBldr)
         Dim StreamWtr As System.IO.StreamWriter = Nothing
-        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidInFileNameFlag
+        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidOutFileNameFlag
         Dim MaxObservedZ As Single
         Dim MinObservedZ As Single
         Dim ShowPeakCalculationDel As New ShowPeakCalculationDelegate(AddressOf ShowPeakCalculation)
@@ -1185,7 +1177,7 @@ Public Class Form1
         Dim StrBldr As New System.Text.StringBuilder(4096)
         Dim strw As New System.IO.StringWriter(StrBldr)
         Dim StreamWtr As System.IO.StreamWriter = Nothing
-        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidInFileNameFlag
+        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidOutFileNameFlag
         Dim StartTime, EndTime As DateTime
         Dim NumberOfSamples As UInteger
         Dim SampleRate As Single
@@ -1646,7 +1638,7 @@ Public Class Form1
         Dim StrBldr As New System.Text.StringBuilder(4096)
         Dim strw As New System.IO.StringWriter(StrBldr)
         Dim StreamWtr As System.IO.StreamWriter = Nothing
-        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidInFileNameFlag
+        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidOutFileNameFlag
 
         'Intended to run in its own thread
         'Stop button aborts this function
@@ -1764,7 +1756,7 @@ Public Class Form1
         Dim StrBldr As New System.Text.StringBuilder(128)
         Dim StrWtr As New System.IO.StringWriter(StrBldr)
         Dim StreamWtr As System.IO.StreamWriter = Nothing
-        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidInFileNameFlag
+        Dim SendToFile As Boolean = chkSendToFile.Checked And ValidOutFileNameFlag
 
         'Intended to run in its own thread
         'Stop button aborts this function
@@ -1892,16 +1884,16 @@ Public Class Form1
 
         Try
             If OpenFileDialog2.ShowDialog = Windows.Forms.DialogResult.OK Then
-                ValidInFileNameFlag = True
+                ValidOutFileNameFlag = True
                 outFileName.Text = OpenFileDialog2.FileName
                 Filename = OpenFileDialog2.FileName
             Else
-                ValidInFileNameFlag = False
+                ValidOutFileNameFlag = False
                 outFileName.Text = ""
             End If
         Catch ex As Exception
             MsgBox(ex.Message, MsgBoxStyle.Exclamation)
-            ValidInFileNameFlag = False
+            ValidOutFileNameFlag = False
             outFileName.Text = ""
         End Try
     End Sub

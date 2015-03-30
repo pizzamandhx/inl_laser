@@ -7,4 +7,5 @@
     Public ValidOutFileNameFlag As Boolean
     Public SendToFileFlag As Boolean
     Public Const BLOCKSIZE = 579
+    Public Const STEPSIZE As double = 0.0000226 `
 End Module

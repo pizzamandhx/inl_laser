@@ -134,7 +134,7 @@ Partial Class Form1
         Me.GraphControl1 = New AP820_Demo.GraphControl()
         Me.btnBrowseOutput = New System.Windows.Forms.Button()
         Me.Label37 = New System.Windows.Forms.Label()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.outFileName = New System.Windows.Forms.TextBox()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
         Me.gbScansWithEncoder.SuspendLayout()
         Me.gbLaserParams.SuspendLayout()
@@ -304,11 +304,11 @@ Partial Class Form1
         Me.chkSendToFile.Text = "Send to File"
         Me.chkSendToFile.UseVisualStyleBackColor = True
         '
-        'txtFileName
+        'inFileName
         '
         Me.inFileName.Location = New System.Drawing.Point(717, 39)
         Me.inFileName.Margin = New System.Windows.Forms.Padding(4)
-        Me.inFileName.Name = "txtFileName"
+        Me.inFileName.Name = "inFileName"
         Me.inFileName.ReadOnly = True
         Me.inFileName.Size = New System.Drawing.Size(606, 22)
         Me.inFileName.TabIndex = 61
@@ -1326,14 +1326,14 @@ Partial Class Form1
         Me.Label37.Text = "Output File:"
         Me.Label37.TextAlign = System.Drawing.ContentAlignment.MiddleRight
         '
-        'TextBox1
+        'outFileName
         '
-        Me.TextBox1.Location = New System.Drawing.Point(717, 69)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(4)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(606, 22)
-        Me.TextBox1.TabIndex = 104
+        Me.outFileName.Location = New System.Drawing.Point(717, 69)
+        Me.outFileName.Margin = New System.Windows.Forms.Padding(4)
+        Me.outFileName.Name = "outFileName"
+        Me.outFileName.ReadOnly = True
+        Me.outFileName.Size = New System.Drawing.Size(606, 22)
+        Me.outFileName.TabIndex = 104
         '
         'OpenFileDialog2
         '
@@ -1347,7 +1347,7 @@ Partial Class Form1
         Me.ClientSize = New System.Drawing.Size(1906, 1037)
         Me.Controls.Add(Me.btnBrowseOutput)
         Me.Controls.Add(Me.Label37)
-        Me.Controls.Add(Me.TextBox1)
+        Me.Controls.Add(Me.outFileName)
         Me.Controls.Add(Me.btnProcessData)
         Me.Controls.Add(Me.btnHoleDiameterMeasurement)
         Me.Controls.Add(Me.gbPeakCalc)
@@ -1522,7 +1522,6 @@ Partial Class Form1
     Friend WithEvents btnProcessData As System.Windows.Forms.Button
     Friend WithEvents btnBrowseOutput As System.Windows.Forms.Button
     Friend WithEvents Label37 As System.Windows.Forms.Label
-    Friend WithEvents TextBox1 As System.Windows.Forms.TextBox
     Friend WithEvents OpenFileDialog2 As System.Windows.Forms.OpenFileDialog
 
 End Class
