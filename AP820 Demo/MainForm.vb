@@ -111,7 +111,7 @@ Public Class Form1
                                 loc(counter) = j
                                 counter += 1
                             End If
-                        Next
+                        Next j
                         slice(i).x = Convert.ToDouble(curPoint.Substring(0, loc(0)))
                         slice(i).z = Convert.ToDouble(curPoint.Substring(loc(0) + 1, ((loc(1) - loc(0)) - 1)))
                         slice(i).i = Convert.ToInt32(curPoint.Substring(loc(1) + 1, ((loc(2) - loc(1)) - 1)))
@@ -123,7 +123,8 @@ Public Class Form1
                 For i = 0 To BLOCKSIZE
                     'Algorithm:
                     'step 1: detect left edge, toss points that match conveyor belt
-                    'step 2: if left edge, make new Biomass object *** IF not continuing Object
+                    'step 2: if left edge, make new Biomas
+s object *** IF not continuing Object
                     'step 3: add points to Biomass object until right edge detected *** If no right edge found delete biomass Object
                     Dim lEdgeDetected As Boolean = False
                     counter = 0

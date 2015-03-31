@@ -24,7 +24,7 @@ Public Class Biomass
     Private topEdgeLoc As Double
     Private botEdgeLoc As Double
 
-    Private data As LinkedList(Of Point())
+    Private data As LinkedList(Of Point)
     Private complete As Boolean
 
     Private Function getWidth() As Integer 'Returns width of the current slice'
@@ -145,9 +145,18 @@ Public Class Biomass
         'Return all the RightEdge's of every object for that scan
 
     End Function
-    Private Function mergeBiomass() As Integer 'Combines 2 "seperate" that when connected by a scan merges the right object into the left object'
-    End Function
+
     'Private Function setRightEdge() As Integer
     'End Function
+
+    'Combines 2 biomass objects into one
+    Private Shared Operator +(ByVal mass1 As Biomass, ByVal mass2 As Biomass)
+        Dim i As Integer
+        Dim size As Integer = mass2.data.Count - 1
+
+        For i = 0 To size
+            mass1.data.AddLast()
+        Next i
+    End Operator
 
 End Class
