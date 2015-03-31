@@ -123,8 +123,7 @@ Public Class Form1
                 For i = 0 To BLOCKSIZE
                     'Algorithm:
                     'step 1: detect left edge, toss points that match conveyor belt
-                    'step 2: if left edge, make new Biomas
-s object *** IF not continuing Object
+                    'step 2: if left edge, make new Biomass object *** IF not continuing Object
                     'step 3: add points to Biomass object until right edge detected *** If no right edge found delete biomass Object
                     Dim lEdgeDetected As Boolean = False
                     counter = 0

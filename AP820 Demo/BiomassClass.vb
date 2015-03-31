@@ -150,12 +150,12 @@ Public Class Biomass
     'End Function
 
     'Combines 2 biomass objects into one
-    Private Shared Operator +(ByVal mass1 As Biomass, ByVal mass2 As Biomass)
+    Public Shared Operator +(ByVal mass1 As Biomass, ByVal mass2 As Biomass)
         Dim i As Integer
         Dim size As Integer = mass2.data.Count - 1
 
         For i = 0 To size
-            mass1.data.AddLast()
+            mass1.data.AddLast(mass2.data(i))
         Next i
     End Operator
 
