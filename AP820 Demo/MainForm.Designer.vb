@@ -131,11 +131,12 @@ Partial Class Form1
         Me.txtPeak = New System.Windows.Forms.TextBox()
         Me.btnHoleDiameterMeasurement = New System.Windows.Forms.Button()
         Me.btnProcessData = New System.Windows.Forms.Button()
-        Me.GraphControl1 = New AP820_Demo.GraphControl()
         Me.btnBrowseOutput = New System.Windows.Forms.Button()
         Me.Label37 = New System.Windows.Forms.Label()
         Me.outFileName = New System.Windows.Forms.TextBox()
         Me.OpenFileDialog2 = New System.Windows.Forms.OpenFileDialog()
+        Me.GraphControl1 = New AP820_Demo.GraphControl()
+        Me.testBiomass = New System.Windows.Forms.Button()
         Me.gbScansWithEncoder.SuspendLayout()
         Me.gbLaserParams.SuspendLayout()
         Me.gbConnect.SuspendLayout()
@@ -306,7 +307,7 @@ Partial Class Form1
         '
         'inFileName
         '
-        Me.inFileName.Location = New System.Drawing.Point(717, 39)
+        Me.inFileName.Location = New System.Drawing.Point(717, 36)
         Me.inFileName.Margin = New System.Windows.Forms.Padding(4)
         Me.inFileName.Name = "inFileName"
         Me.inFileName.ReadOnly = True
@@ -1297,15 +1298,6 @@ Partial Class Form1
         Me.btnProcessData.Text = "Process!"
         Me.btnProcessData.UseVisualStyleBackColor = True
         '
-        'GraphControl1
-        '
-        Me.GraphControl1.Location = New System.Drawing.Point(615, 838)
-        Me.GraphControl1.Margin = New System.Windows.Forms.Padding(4)
-        Me.GraphControl1.Name = "GraphControl1"
-        Me.GraphControl1.Size = New System.Drawing.Size(857, 359)
-        Me.GraphControl1.TabIndex = 88
-        Me.GraphControl1.Text = "GraphControl1"
-        '
         'btnBrowseOutput
         '
         Me.btnBrowseOutput.Location = New System.Drawing.Point(1331, 69)
@@ -1339,12 +1331,31 @@ Partial Class Form1
         '
         Me.OpenFileDialog2.FileName = "OpenFileDialog2"
         '
+        'GraphControl1
+        '
+        Me.GraphControl1.Location = New System.Drawing.Point(615, 838)
+        Me.GraphControl1.Margin = New System.Windows.Forms.Padding(4)
+        Me.GraphControl1.Name = "GraphControl1"
+        Me.GraphControl1.Size = New System.Drawing.Size(857, 359)
+        Me.GraphControl1.TabIndex = 88
+        Me.GraphControl1.Text = "GraphControl1"
+        '
+        'testBiomass
+        '
+        Me.testBiomass.Location = New System.Drawing.Point(1117, 108)
+        Me.testBiomass.Name = "testBiomass"
+        Me.testBiomass.Size = New System.Drawing.Size(75, 23)
+        Me.testBiomass.TabIndex = 107
+        Me.testBiomass.Text = "Test Biomass"
+        Me.testBiomass.UseVisualStyleBackColor = True
+        '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoScroll = True
         Me.ClientSize = New System.Drawing.Size(1906, 1037)
+        Me.Controls.Add(Me.testBiomass)
         Me.Controls.Add(Me.btnBrowseOutput)
         Me.Controls.Add(Me.Label37)
         Me.Controls.Add(Me.outFileName)
@@ -1523,5 +1534,6 @@ Partial Class Form1
     Friend WithEvents btnBrowseOutput As System.Windows.Forms.Button
     Friend WithEvents Label37 As System.Windows.Forms.Label
     Friend WithEvents OpenFileDialog2 As System.Windows.Forms.OpenFileDialog
+    Friend WithEvents testBiomass As System.Windows.Forms.Button
 
 End Class

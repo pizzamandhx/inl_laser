@@ -19,14 +19,40 @@ Public Class Biomass
     Private avgVolume As Double
     Private maxVolume As Double
 
-    Private leftEdgeLoc As Double
-    Private rightEdgeLoc As Double
-    Private topEdgeLoc As Double
-    Private botEdgeLoc As Double
+    Private leftEdgeLoc As Point
+    Private rightEdgeLoc As Point
+    Private topEdgeLoc As Point
+    Private botEdgeLoc As Point
 
     Private data As LinkedList(Of Point)
     Private complete As Boolean
 
+    Public Sub New(ByVal left As Point)
+        Dim t_point As New Point
+        width = 0
+        avgWidth = 0
+        maxWidth = 0
+
+        height = 0
+        avgHeight = 0
+        maxHeight = 0
+
+        length = 0
+        avgLength = 0
+        maxLength = 0
+
+        volume = 0
+        avgVolume = 0
+        maxVolume = 0
+
+        leftEdgeLoc = left
+        rightEdgeLoc = t_point
+        topEdgeLoc = t_point
+        botEdgeLoc = t_point
+
+        'data
+        complete = False
+    End Sub
     Private Function getWidth() As Integer 'Returns width of the current slice'
         Return width
     End Function
@@ -102,7 +128,7 @@ Public Class Biomass
     End Function
 
 
-    Private Function getLeftEdge() As Integer 'Returns array of the left edge location
+    Private Function getLeftEdge() As Point 'Returns array of the left edge location
         Return leftEdgeLoc
     End Function
     Private Function setLeftEdge() As Integer  'Finds the first measurement of the object and stores it into the leftEdgeLoc variable of one single scan
@@ -124,7 +150,7 @@ Public Class Biomass
         Next i
         'Return all the LeftEdge's of every object for that scan
     End Function
-    Private Function getRightEdge() As Integer 'Returns array of the right edge location'
+    Private Function getRightEdge() As Point 'Returns array of the right edge location'
         Return rightEdgeLoc
     End Function
     Private Function setRightEdge() As Integer 'Finds the end of the object (the right side) and stores it into the rightEdgeLoc variable of one single scan'
@@ -135,14 +161,14 @@ Public Class Biomass
         'For loop that loops through the single scan of data to find the right edge of the object.
         j = 1
         k = 1
-        For i = 1 To 580 'Array of data of a single scan
+        For i = 1 To BLOCKSIZE 'Array of data of a single scan
 
             ''''''Once we find that the Z data is equal to the conveyor belt and the zDataPoint before that point is higher than the conveyor
             ''''''then store that point. That is the right edge.
             'If (zDataPoint == ConveyorHeight && zDataPoint - 1 > Conveyor Height  && Intensity >=250)
             'Store xDataPoint and continue through the rest of the data to find the other right edges of other objects
         Next i
-        'Return all the RightEdge's of every object for that scan
+        'Return all the RightEdges of every object for that scan
 
     End Function
 
@@ -152,8 +178,8 @@ Public Class Biomass
     'Combines 2 biomass objects into one
     Public Shared Operator +(ByVal mass1 As Biomass, ByVal mass2 As Biomass)
         Dim i As Integer
-        Dim size As Integer = mass2.data.Count - 1
 
+        Dim size As Integer = mass2.data.Count - 1
         For i = 0 To size
             mass1.data.AddLast(mass2.data(i))
         Next i
