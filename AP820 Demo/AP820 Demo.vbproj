@@ -124,7 +124,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="ObjectGrid.vb" />
+    <Compile Include="PointClass.vb" />
     <Compile Include="SecondLaserForm.Designer.vb">
       <DependentUpon>SecondLaserForm.vb</DependentUpon>
     </Compile>

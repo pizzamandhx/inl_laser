@@ -2475,6 +2475,13 @@ Public Class Form1
     End Sub
 
     Private Sub testBiomass_Click(sender As Object, e As EventArgs) Handles testBiomass.Click
-        'Dim 
+        Randomize()
+        Dim one As New Point(1, 2, 3, 4)
+        Dim two As New Point(5, 6, 7, 8)
+
+        Dim b1 As New Biomass(one)
+        Dim b2 As New Biomass(two)
+
+        b1 = b1 + b2
     End Sub
 End Class

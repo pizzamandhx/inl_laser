@@ -24,7 +24,7 @@ Public Class Biomass
     Private topEdgeLoc As Point
     Private botEdgeLoc As Point
 
-    Private data As LinkedList(Of Point)
+    Private data As New LinkedList(Of Point)
     Private complete As Boolean
 
     Public Sub New(ByVal left As Point)
@@ -50,7 +50,11 @@ Public Class Biomass
         topEdgeLoc = t_point
         botEdgeLoc = t_point
 
-        'data
+        Try
+            data.AddLast(left)
+        Catch ex As System.NullReferenceException
+            MsgBox("Error: " + ex.Message)
+        End Try
         complete = False
     End Sub
     Private Function getWidth() As Integer 'Returns width of the current slice'
@@ -177,12 +181,19 @@ Public Class Biomass
 
     'Combines 2 biomass objects into one
     Public Shared Operator +(ByVal mass1 As Biomass, ByVal mass2 As Biomass)
-        Dim i As Integer
+        'Dim i As Integer
 
-        Dim size As Integer = mass2.data.Count - 1
-        For i = 0 To size
-            mass1.data.AddLast(mass2.data(i))
-        Next i
+        'Dim size As Integer = mass2.data.Count - 1
+        'For i = 0 To size
+        'mass1.data.AddLast(mass2.data(i))
+        'mass1.data.Concat(mass2.data)
+        'Next i
+        For Each item As Point In mass2.data
+            mass1.data.AddLast(item)
+        Next
+
+        mass2.data.Clear()
+        Return mass1
     End Operator
 
 End Class

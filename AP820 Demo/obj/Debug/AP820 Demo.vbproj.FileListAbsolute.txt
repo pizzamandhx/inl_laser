@@ -80,4 +80,3 @@ C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.vbproj.
 C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.exe
 C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.xml
 C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.pdb
-C:\Users\Sean\Documents\GitHub\inl_laser\AP820 Demo\obj\Debug\AP820 Demo.vbprojResolveAssemblyReference.cache
