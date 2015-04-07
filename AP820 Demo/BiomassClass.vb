@@ -171,49 +171,68 @@ Public Class Biomass
     End Function
 
 
-    Private Function getLeftEdge() As Point 'Returns array of the left edge location
+    Public Function getLeftEdge() As Point 'Returns array of the left edge location
         Return leftEdgeLoc
     End Function
-    Private Function setLeftEdge() As Integer  'Finds the first measurement of the object and stores it into the leftEdgeLoc variable of one single scan
-        Dim j As Integer
-        Dim i As Integer
-        Dim k As Integer
+    Public Function setLeftEdge(ByVal a As Point) 'Finds the first measurement of the object and stores it into the leftEdgeLoc variable of one single scan
+        leftEdgeLoc = a
+        'Dim j As Integer
+        'Dim i As Integer
+        'Dim k As Integer
 
-        'For loop that loops through the single scan of data to find the left edge of the object.
-        j = 1
-        k = 1
-        For i = k To 580 'Array of data of a single scan
+        ''For loop that loops through the single scan of data to find the left edge of the object.
+        'j = 1
+        'k = 1
+        'For i = k To 580 'Array of data of a single scan
 
-            ''''''Once we find that the Z data is higher than the conveyor belt, store that point. That is the left edge.
-            'If (zDataPoint > ConveyorHeight && zDataPoint - 1 == Conveyor Height && Intensity >=250)
-            'Set leftEdgeLoc to the first point where it is true, and then return
-            '
-            ' 
-            'On subsequent loops through the scan of data always find the first edge (which may not be the first edge)
-        Next i
-        'Return all the LeftEdge's of every object for that scan
+        '    ''''''Once we find that the Z data is higher than the conveyor belt, store that point. That is the left edge.
+        '    'If (zDataPoint > ConveyorHeight && zDataPoint - 1 == Conveyor Height && Intensity >=250)
+        '    'Set leftEdgeLoc to the first point where it is true, and then return
+        '    '
+        '    ' 
+        '    'On subsequent loops through the scan of data always find the first edge (which may not be the first edge)
+        'Next i
+        ''Return all the LeftEdge's of every object for that scan
     End Function
-    Private Function getRightEdge() As Point 'Returns array of the right edge location'
+    Public Function getRightEdge() As Point 'Returns array of the right edge location'
         Return rightEdgeLoc
     End Function
-    Private Function setRightEdge() As Integer 'Finds the end of the object (the right side) and stores it into the rightEdgeLoc variable of one single scan'
-        Dim j As Integer
-        Dim i As Integer
-        Dim k As Integer
+    Public Function setRightEdge(a As Point) 'Finds the end of the object (the right side) and stores it into the rightEdgeLoc variable of one single scan'
+        rightEdgeLoc = a
+        'Dim j As Integer
+        'Dim i As Integer
+        'Dim k As Integer
 
-        'For loop that loops through the single scan of data to find the right edge of the object.
-        j = 1
-        k = 1
-        For i = 1 To BLOCKSIZE 'Array of data of a single scan
+        ''For loop that loops through the single scan of data to find the right edge of the object.
+        'j = 1
+        'k = 1
+        'For i = 1 To BLOCKSIZE 'Array of data of a single scan
 
-            ''''''Once we find that the Z data is equal to the conveyor belt and the zDataPoint before that point is higher than the conveyor
-            ''''''then store that point. That is the right edge.
-            'If (zDataPoint == ConveyorHeight && zDataPoint - 1 > Conveyor Height  && Intensity >=250)
-            'Store xDataPoint and continue through the rest of the data to find the other right edges of other objects
-        Next i
-        'Return all the RightEdges of every object for that scan
+        '    ''''''Once we find that the Z data is equal to the conveyor belt and the zDataPoint before that point is higher than the conveyor
+        '    ''''''then store that point. That is the right edge.
+        '    'If (zDataPoint == ConveyorHeight && zDataPoint - 1 > Conveyor Height  && Intensity >=250)
+        '    'Store xDataPoint and continue through the rest of the data to find the other right edges of other objects
+        'Next i
+        ''Return all the RightEdges of every object for that scan
 
     End Function
+
+    Public Function getBeyondLeft() As Boolean
+        Return beyondLeft
+    End Function
+
+    Public Function getBeyondRight() As Boolean
+        Return beyondRight
+    End Function
+
+    Public Function setBeyondLeft(ByVal a As Boolean)
+        beyondLeft = a
+    End Function
+
+    Public Function setBeyondRight(ByVal a As Boolean)
+        beyondRight = a
+    End Function
+
 
     'Private Function setRightEdge() As Integer
     'End Function

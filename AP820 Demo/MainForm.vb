@@ -49,7 +49,7 @@ Public Class Form1
     Private HeightThreshold As Single
     Private UpdateCounts As Integer
     Private GapMode As Boolean
-    Private BiomassList As LinkedList(Of Biomass)
+    Private BiomassList As New LinkedList(Of Biomass)
     ' Dim btnBrowseOuput As Control
     ' Private slice(BLOCKSIZE) As Point
 
@@ -94,8 +94,10 @@ Public Class Form1
         Dim slice2(BLOCKSIZE) As Point
         Dim sliceSelect As Boolean
         Dim sr As StreamReader
-        Dim sliceObjects As LinkedList(Of Biomass)
+        Dim sliceObjectsInProgress As New LinkedList(Of Biomass)
+        Dim sliceObjectsCurrent As New LinkedList(Of Biomass)
 
+        'loop to initialize the slices.
         For i = 0 To BLOCKSIZE
             slice1(i) = New Point
             slice2(i) = New Point
@@ -130,10 +132,8 @@ Public Class Form1
                                 slice1(i).y = y
                                 slice1(i).calcVolume()
                             Catch ex As NullReferenceException
-                                MsgBox(ex.Message + Convert.ToString(i))
+                                MsgBox(ex.Message, MsgBoxStyle.Exclamation)
                             End Try
-
-                            'sliceSelect = False
                         Next i
 
                     ElseIf sliceSelect <> True Then
@@ -151,30 +151,58 @@ Public Class Form1
                             slice2(i).z = Convert.ToDouble(curPoint.Substring(loc(0) + 1, ((loc(1) - loc(0)) - 1)))
                             slice2(i).i = Convert.ToInt32(curPoint.Substring(loc(1) + 1, ((loc(2) - loc(1)) - 1)))
                             slice2(i).y = y
-                            'sliceSelect = True
+                            slice2(i).calcVolume()
                         Next i
                     End If
                 End If
                 'Return slice
 
                 If sliceSelect = True Then
-                    For i = 0 To BLOCKSIZE
-                        If (slice1(i).i >= 254 & slice1(i - 1).i < 254) Then 'detect left edge
-                            Dim mass1 As New Biomass
-                            sliceObjects.AddLast(mass1)
-                            While (slice1(i).i >= 254 & slice1(i + 1).i < 254) 'detect right edge
-                                mass1.addPoint(slice1(i))
+                    Dim mass1 As New Biomass
+                    If (slice1(0).i >= 254 And slice1(1).i < 254) Then
+                        mass1.setBeyondLeft(True)
+                        mass1.setLeftEdge(slice1(0))
+                        mass1.addPoint(slice1(0))
+                    End If
+
+                    For i = 1 To BLOCKSIZE
+                        If (slice1(i).i >= 254 And slice1(i - 1).i < 254) Then 'detect left edge
+                            sliceObjectsCurrent.AddLast(mass1)
+                            mass1.setLeftEdge(slice1(i))
+                            While (i < BLOCKSIZE)
+                                If (slice1(i).i >= 254 & slice1(i + 1).i < 254) Then 'detect right edge
+                                    mass1.addPoint(slice1(i))
+                                End If
+                                If (i = slice1(579).i >= 254) Then
+                                    mass1.setBeyondRight(True)
+                                    mass1.addPoint(slice1(BLOCKSIZE))
+                                End If
+                                mass1.setRightEdge(slice1(i))
                                 i += 1
                             End While
                         End If
                     Next
                 ElseIf sliceSelect = False Then
-                    For i = 0 To BLOCKSIZE
-                        If (slice2(i).i >= 254 & slice2(i - 1).i < 254) Then 'detect left edge
-                            Dim mass1 As New Biomass
-                            sliceObjects.AddLast(mass1)
-                            While (slice2(i).i >= 254 & slice2(i + 1).i < 254) 'detect right edge
-                                mass1.addPoint(slice2(i))
+                    Dim mass1 As New Biomass
+                    If (slice2(0).i >= 254 And slice2(1).i < 254) Then
+                        mass1.setBeyondLeft(True)
+                        mass1.setLeftEdge(slice1(0))
+                        mass1.addPoint(slice1(0))
+                    End If
+
+                    For i = 1 To BLOCKSIZE
+                        If (slice2(i).i >= 254 And slice2(i - 1).i < 254) Then 'detect left edge
+                            sliceObjectsCurrent.AddLast(mass1)
+                            mass1.setLeftEdge(slice2(i))
+                            While (i < BLOCKSIZE)
+                                If (slice2(i).i >= 254 & slice2(i + 1).i < 254) Then 'detect right edge
+                                    mass1.addPoint(slice2(i))
+                                End If
+                                If (i = slice2(579).i >= 254) Then
+                                    mass1.setBeyondRight(True)
+                                    mass1.addPoint(slice2(BLOCKSIZE))
+                                End If
+                                mass1.setRightEdge(slice2(i))
                                 i += 1
                             End While
                         End If
@@ -182,28 +210,43 @@ Public Class Form1
                 End If
 
                 For i = 0 To BLOCKSIZE
-                    'Algorithm:
-                    'step 1: detect left edge, toss points that match conveyor belt
-                    'step 2: if left edge, make new Biomass object *** IF not continuing Object
-                    'step 3: add points to Biomass object until right edge detected *** If no right edge found delete biomass Object
                     If sliceSelect = True Then
-                        If slice1(i).i < 254 Then
+                        Dim b1 As New Biomass
+                        Dim left, right As Point
 
+                        If slice2(i).i >= 254 Then
+                            b1 = sliceObjectsCurrent.First.Value
+                            left = b1.getLeftEdge
+                            right = b1.getRightEdge
+                            If (sliceObjectsInProgress.Count = 0) Then
+                                sliceObjectsInProgress.AddFirst(b1)
+                            ElseIf ((right.x < sliceObjectsInProgress.First.Value.getLeftEdge.x) And (left.x < sliceObjectsInProgress.First.Value.getRightEdge.x)) Then
+                                sliceObjectsInProgress.First.Value = sliceObjectsInProgress.First.Value + b1
+                            End If
+                        ElseIf sliceSelect = False Then
+                            sliceSelect = True
                         End If
                         sliceSelect = False
                     ElseIf sliceSelect = False Then
+                        Dim b1 As New Biomass
+                        Dim left, right As Point
+
+                        If slice1(i).i >= 254 Then
+                            b1 = sliceObjectsCurrent.First.Value
+                            left = b1.getLeftEdge
+                            right = b1.getRightEdge
+                            If (sliceObjectsInProgress.Count = 0) Then
+                                sliceObjectsInProgress.AddFirst(b1)
+                            ElseIf ((right.x < sliceObjectsInProgress.First.Value.getLeftEdge.x) And (left.x < sliceObjectsInProgress.First.Value.getRightEdge.x)) Then
+                                sliceObjectsInProgress.First.Value = sliceObjectsInProgress.First.Value + b1
+                            End If
+                        ElseIf sliceSelect = False Then
+                            sliceSelect = True
+                        End If
                         sliceSelect = True
                     End If
-
-                    Dim lEdgeDetected As Boolean = False
-                    counter = 0
-                    'Do Until lEdgeDetected
-                    '    If slice(counter).i > 250 && slice(counter+1)
-                    '        counter += 1
-                    'Loop
-
                 Next
-                'step 4: write biomass object to file to... wherever *** Once object has ended? (FindBotEdge found)
+                counter = 0
 
             Loop 'this is the end of the DoWhile loop above
         Else
