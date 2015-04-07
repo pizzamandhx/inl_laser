@@ -209,8 +209,37 @@ Public Class Form1
                     Next
                 End If
 
-                For Each pnt As Biomass In sliceObjectsInProgress
+                If (sliceObjectsInProgress.Count = 0 And sliceObjectsCurrent.Count <> 0) Then
+                    sliceObjectsInProgress.AddFirst(sliceObjectsCurrent.First.Value)
+                End If
 
+                i = 0
+                For Each pnt As Biomass In sliceObjectsInProgress
+                    Dim left As Point = pnt.getLeftEdge()
+                    Dim right As Point = pnt.getRightEdge()
+                    If sliceSelect = True Then
+                        If slice2(i).i >= 254 Then
+                            If ((left.x < sliceObjectsCurrent.First.Value.getLeftEdge.x) And (left.x < sliceObjectsInProgress.First.Value.getRightEdge.x)) Then
+                                pnt = pnt + sliceObjectsCurrent.First.Value
+                                sliceObjectsCurrent.RemoveFirst()
+                            ElseIf ((right.x < sliceObjectsInProgress.First.Value.getLeftEdge.x) And (left.x < sliceObjectsInProgress.First.Value.getRightEdge.x)) Then
+                                pnt = pnt + sliceObjectsCurrent.First.Value
+                                sliceObjectsCurrent.RemoveFirst()
+                            End If
+                        End If
+                        ElseIf sliceSelect = False Then
+                        If slice1(i).i >= 254 Then
+                            If ((left.x < sliceObjectsCurrent.First.Value.getLeftEdge.x) And (left.x < sliceObjectsInProgress.First.Value.getRightEdge.x)) Then
+                                pnt = pnt + sliceObjectsCurrent.First.Value
+                                sliceObjectsCurrent.RemoveFirst()
+                            ElseIf ((right.x < sliceObjectsInProgress.First.Value.getLeftEdge.x) And (left.x < sliceObjectsInProgress.First.Value.getRightEdge.x)) Then
+                                pnt = pnt + sliceObjectsCurrent.First.Value
+                                sliceObjectsCurrent.RemoveFirst()
+                            End If
+                        End If
+                    End If
+                    i += 1
+                    j = 0
                 Next
                 'For i = 0 To BLOCKSIZE
                 '    If sliceSelect = True Then
