@@ -118,10 +118,15 @@ Public Class Form1
                                     counter += 1
                                 End If
                             Next j
-                            slice1(i).x = Convert.ToDouble(curPoint.Substring(0, loc(0)))
-                            slice1(i).z = Convert.ToDouble(curPoint.Substring(loc(0) + 1, ((loc(1) - loc(0)) - 1)))
-                            slice1(i).i = Convert.ToInt32(curPoint.Substring(loc(1) + 1, ((loc(2) - loc(1)) - 1)))
-                            slice1(i).y = y
+                            Try
+                                slice1(i).x = Convert.ToDouble(curPoint.Substring(0, loc(0)))
+                                slice1(i).z = Convert.ToDouble(curPoint.Substring(loc(0) + 1, ((loc(1) - loc(0)) - 1)))
+                                slice1(i).i = Convert.ToInt32(curPoint.Substring(loc(1) + 1, ((loc(2) - loc(1)) - 1)))
+                                slice1(i).y = y
+                            Catch ex As NullReferenceException
+                                MsgBox(ex.Message)
+                            End Try
+
                             'sliceSelect = False
                         Next i
 
@@ -159,7 +164,14 @@ Public Class Form1
                     Next
                 ElseIf sliceSelect = False Then
                     For i = 0 To BLOCKSIZE
-
+                        If (slice2(i).i >= 254 & slice2(i - 1).i < 254) Then 'detect left edge
+                            Dim mass1 As New Biomass
+                            sliceObjects.AddLast(mass1)
+                            While (slice2(i).i >= 254 & slice2(i + 1).i < 254) 'detect right edge
+                                mass1.addPoint(slice2(i))
+                                i += 1
+                            End While
+                        End If
                     Next
                 End If
 
@@ -187,7 +199,7 @@ Public Class Form1
                 Next
                 'step 4: write biomass object to file to... wherever *** Once object has ended? (FindBotEdge found)
 
-            Loop
+            Loop 'this is the end of the DoWhile loop above
         Else
             MsgBox("No input filename specified!", MsgBoxStyle.Exclamation)
         End If
