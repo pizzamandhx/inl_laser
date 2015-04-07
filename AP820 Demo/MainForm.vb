@@ -61,10 +61,10 @@ Public Class Form1
         Dim j As Integer
         Dim i As Integer
         Dim k As Integer
-        Dim slice(BLOCKSIZE) As Point
+        ' Dim slice(BLOCKSIZE) As Point
 
-        slice = fileIn(Convert.ToString(inFileName.Text)) 'Open the file, start reading slices
-        fileOut(Convert.ToString(outFileName.Text), slice)
+        fileIn(Convert.ToString(inFileName.Text)) 'Open the file, start reading slices
+        'fileOut(Convert.ToString(outFileName.Text), slice)
 
         'For loop that scans a single slice of data to find the left edge of the object.
         j = 0
@@ -81,7 +81,7 @@ Public Class Form1
         'Return all the LeftEdge's of every object for that scan
     End Sub
 
-    Private Function fileIn(ByVal fileName As String) As Point()
+    Private Function fileIn(ByVal fileName As String)
         Dim encoder As String = ""
         Dim curPoint As String = ""
         Dim loc(2) As Integer
@@ -95,6 +95,11 @@ Public Class Form1
         Dim sliceSelect As Boolean
         Dim sr As StreamReader
         Dim sliceObjects As LinkedList(Of Biomass)
+
+        For i = 0 To BLOCKSIZE
+            slice1(i) = New Point
+            slice2(i) = New Point
+        Next
 
         'In
         If fileName <> "" Then
@@ -123,8 +128,9 @@ Public Class Form1
                                 slice1(i).z = Convert.ToDouble(curPoint.Substring(loc(0) + 1, ((loc(1) - loc(0)) - 1)))
                                 slice1(i).i = Convert.ToInt32(curPoint.Substring(loc(1) + 1, ((loc(2) - loc(1)) - 1)))
                                 slice1(i).y = y
+                                slice1(i).calcVolume()
                             Catch ex As NullReferenceException
-                                MsgBox(ex.Message)
+                                MsgBox(ex.Message + Convert.ToString(i))
                             End Try
 
                             'sliceSelect = False

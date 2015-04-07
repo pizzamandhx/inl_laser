@@ -1,6 +1,5 @@
-﻿'Const BLOCKSIZE = 579
-Public Class Point
-    Private volume As Double
+﻿Public Class Point
+    Private vol As Double
     Private xVal As Double
     Private yVal As Double
     Private zVal As Double
@@ -40,6 +39,15 @@ Public Class Point
             iVal = value
         End Set
     End Property
+
+    Public Property volume As Integer
+        Get
+            Return vol
+        End Get
+        Set(value As Integer)
+            vol = value
+        End Set
+    End Property
     Sub New()
         x = 0
         y = 0
@@ -50,11 +58,16 @@ Public Class Point
 
     'make sure conveyor height is accounted for with z in the function
     Sub New(ByVal a As Double, ByVal b As Double, ByVal c As Double, ByVal d As Integer)
-        x = a
-        y = b
-        z = c
-        i = d
-        volume = x * (y * STEPSIZE) * z
+        xVal = a
+        yVal = b
+        zVal = c
+        calcVolume()
+        iVal = d
     End Sub
+
+    Public Sub calcVolume()
+        vol = xVal * (yVal * STEPSIZE) * zVal
+    End Sub
+
 
 End Class
