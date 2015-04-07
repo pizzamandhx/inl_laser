@@ -150,6 +150,7 @@ Public Class Form1
                     For i = 0 To BLOCKSIZE
                         If (slice1(i).i >= 254 & slice1(i - 1).i < 254) Then 'detect left edge
                             Dim mass1 As New Biomass
+                            sliceObjects.AddLast(mass1)
                             While (slice1(i).i >= 254 & slice1(i + 1).i < 254) 'detect right edge
                                 mass1.addPoint(slice1(i))
                                 i += 1
