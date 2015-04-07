@@ -49,6 +49,7 @@ Public Class Form1
     Private HeightThreshold As Single
     Private UpdateCounts As Integer
     Private GapMode As Boolean
+    Private BiomassList As LinkedList(Of Biomass)
     ' Dim btnBrowseOuput As Control
     ' Private slice(BLOCKSIZE) As Point
 
@@ -89,12 +90,16 @@ Public Class Form1
         Dim i As Integer
         Dim j As Integer
         Dim y As Integer
-        Dim slice(BLOCKSIZE) As Point
+        Dim slice1(BLOCKSIZE) As Point
+        Dim slice2(BLOCKSIZE) As Point
+        Dim sliceSelect As Boolean
         Dim sr As StreamReader
+        Dim sliceObjects As LinkedList(Of Biomass)
 
         'In
         If fileName <> "" Then
             sr = File.OpenText(fileName)
+            sliceSelect = True
             Do While sr.Peek >= 0
                 encoder = sr.ReadLine
                 If encoder <> "" Then
@@ -102,29 +107,75 @@ Public Class Form1
                     i = encoder.IndexOf("Counts") + 8
                     y = Convert.ToInt32(encoder.Substring(i, encoder.Length - i))
 
-                    For i = 0 To BLOCKSIZE
-                        curPoint = sr.ReadLine
-                        loc(2) = curPoint.Length
-                        counter = 0
-                        For j = 0 To loc(2) - 1
-                            If (curPoint(j) = Chr(9)) Then 'This checks for tabs, 44 is commas
-                                loc(counter) = j
-                                counter += 1
-                            End If
-                        Next j
-                        slice(i).x = Convert.ToDouble(curPoint.Substring(0, loc(0)))
-                        slice(i).z = Convert.ToDouble(curPoint.Substring(loc(0) + 1, ((loc(1) - loc(0)) - 1)))
-                        slice(i).i = Convert.ToInt32(curPoint.Substring(loc(1) + 1, ((loc(2) - loc(1)) - 1)))
-                        slice(i).y = y
-                    Next i
+                    If sliceSelect = True Then
+                        For i = 0 To BLOCKSIZE
+                            curPoint = sr.ReadLine
+                            loc(2) = curPoint.Length
+                            counter = 0
+                            For j = 0 To loc(2) - 1
+                                If (curPoint(j) = Chr(9)) Then 'This checks for tabs, 44 is commas
+                                    loc(counter) = j
+                                    counter += 1
+                                End If
+                            Next j
+                            slice1(i).x = Convert.ToDouble(curPoint.Substring(0, loc(0)))
+                            slice1(i).z = Convert.ToDouble(curPoint.Substring(loc(0) + 1, ((loc(1) - loc(0)) - 1)))
+                            slice1(i).i = Convert.ToInt32(curPoint.Substring(loc(1) + 1, ((loc(2) - loc(1)) - 1)))
+                            slice1(i).y = y
+                            'sliceSelect = False
+                        Next i
+
+                    ElseIf sliceSelect <> True Then
+                        For i = 0 To BLOCKSIZE
+                            curPoint = sr.ReadLine
+                            loc(2) = curPoint.Length
+                            counter = 0
+                            For j = 0 To loc(2) - 1
+                                If (curPoint(j) = Chr(9)) Then 'This checks for tabs, 44 is commas
+                                    loc(counter) = j
+                                    counter += 1
+                                End If
+                            Next j
+                            slice2(i).x = Convert.ToDouble(curPoint.Substring(0, loc(0)))
+                            slice2(i).z = Convert.ToDouble(curPoint.Substring(loc(0) + 1, ((loc(1) - loc(0)) - 1)))
+                            slice2(i).i = Convert.ToInt32(curPoint.Substring(loc(1) + 1, ((loc(2) - loc(1)) - 1)))
+                            slice2(i).y = y
+                            'sliceSelect = True
+                        Next i
+                    End If
                 End If
-                Return slice
+                'Return slice
+
+                If sliceSelect = True Then
+                    For i = 0 To BLOCKSIZE
+                        If (slice1(i).i >= 254 & slice1(i - 1).i < 254) Then 'detect left edge
+                            Dim mass1 As New Biomass
+                            While (slice1(i).i >= 254 & slice1(i + 1).i < 254) 'detect right edge
+                                mass1.addPoint(slice1(i))
+                                i += 1
+                            End While
+                        End If
+                    Next
+                ElseIf sliceSelect = False Then
+                    For i = 0 To BLOCKSIZE
+
+                    Next
+                End If
 
                 For i = 0 To BLOCKSIZE
                     'Algorithm:
                     'step 1: detect left edge, toss points that match conveyor belt
                     'step 2: if left edge, make new Biomass object *** IF not continuing Object
                     'step 3: add points to Biomass object until right edge detected *** If no right edge found delete biomass Object
+                    If sliceSelect = True Then
+                        If slice1(i).i < 254 Then
+
+                        End If
+                        sliceSelect = False
+                    ElseIf sliceSelect = False Then
+                        sliceSelect = True
+                    End If
+
                     Dim lEdgeDetected As Boolean = False
                     counter = 0
                     'Do Until lEdgeDetected

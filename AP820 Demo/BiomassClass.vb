@@ -27,6 +27,9 @@ Public Class Biomass
     Private data As New LinkedList(Of Point)
     Private complete As Boolean
 
+    Private beyondLeft As Boolean
+    Private beyondRight As Boolean
+
     Public Sub New(ByVal left As Point)
         Dim t_point As New Point
         width = 0
@@ -50,6 +53,9 @@ Public Class Biomass
         topEdgeLoc = t_point
         botEdgeLoc = t_point
 
+        beyondLeft = False
+        beyondRight = False
+
         Try
             data.AddLast(left)
         Catch ex As System.NullReferenceException
@@ -57,6 +63,39 @@ Public Class Biomass
         End Try
         complete = False
     End Sub
+
+    Sub New()
+        Dim t_point As New Point
+        width = 0
+        avgWidth = 0
+        maxWidth = 0
+
+        height = 0
+        avgHeight = 0
+        maxHeight = 0
+
+        length = 0
+        avgLength = 0
+        maxLength = 0
+
+        volume = 0
+        avgVolume = 0
+        maxVolume = 0
+
+        leftEdgeLoc = t_point
+        rightEdgeLoc = t_point
+        topEdgeLoc = t_point
+        botEdgeLoc = t_point
+
+        beyondLeft = False
+        beyondRight = False
+    End Sub
+
+    Public Sub addPoint(ByVal a As Point)
+        data.AddLast(a)
+    End Sub
+
+
     Private Function getWidth() As Integer 'Returns width of the current slice'
         Return width
     End Function
