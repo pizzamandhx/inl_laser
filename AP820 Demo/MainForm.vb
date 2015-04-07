@@ -209,43 +209,46 @@ Public Class Form1
                     Next
                 End If
 
-                For i = 0 To BLOCKSIZE
-                    If sliceSelect = True Then
-                        Dim b1 As New Biomass
-                        Dim left, right As Point
+                For Each pnt As Biomass In sliceObjectsInProgress
 
-                        If slice2(i).i >= 254 Then
-                            b1 = sliceObjectsCurrent.First.Value
-                            left = b1.getLeftEdge
-                            right = b1.getRightEdge
-                            If (sliceObjectsInProgress.Count = 0) Then
-                                sliceObjectsInProgress.AddFirst(b1)
-                            ElseIf ((right.x < sliceObjectsInProgress.First.Value.getLeftEdge.x) And (left.x < sliceObjectsInProgress.First.Value.getRightEdge.x)) Then
-                                sliceObjectsInProgress.First.Value = sliceObjectsInProgress.First.Value + b1
-                            End If
-                        ElseIf sliceSelect = False Then
-                            sliceSelect = True
-                        End If
-                        sliceSelect = False
-                    ElseIf sliceSelect = False Then
-                        Dim b1 As New Biomass
-                        Dim left, right As Point
-
-                        If slice1(i).i >= 254 Then
-                            b1 = sliceObjectsCurrent.First.Value
-                            left = b1.getLeftEdge
-                            right = b1.getRightEdge
-                            If (sliceObjectsInProgress.Count = 0) Then
-                                sliceObjectsInProgress.AddFirst(b1)
-                            ElseIf ((right.x < sliceObjectsInProgress.First.Value.getLeftEdge.x) And (left.x < sliceObjectsInProgress.First.Value.getRightEdge.x)) Then
-                                sliceObjectsInProgress.First.Value = sliceObjectsInProgress.First.Value + b1
-                            End If
-                        ElseIf sliceSelect = False Then
-                            sliceSelect = True
-                        End If
-                        sliceSelect = True
-                    End If
                 Next
+                'For i = 0 To BLOCKSIZE
+                '    If sliceSelect = True Then
+                '        Dim b1 As New Biomass
+                '        Dim left, right As Point
+
+                '        If slice2(i).i >= 254 Then
+                '            b1 = sliceObjectsCurrent.First.Value
+                '            left = b1.getLeftEdge
+                '            right = b1.getRightEdge
+                '            If (sliceObjectsInProgress.Count = 0) Then
+                '                sliceObjectsInProgress.AddFirst(b1)
+                '            ElseIf ((right.x < sliceObjectsInProgress.First.Value.getLeftEdge.x) And (left.x < sliceObjectsInProgress.First.Value.getRightEdge.x)) Then
+                '                sliceObjectsInProgress.First.Value = sliceObjectsInProgress.First.Value + b1
+                '            End If
+                '        ElseIf sliceSelect = False Then
+                '            sliceSelect = True
+                '        End If
+                '        sliceSelect = False
+                '    ElseIf sliceSelect = False Then
+                '        Dim b1 As New Biomass
+                '        Dim left, right As Point
+
+                '        If slice1(i).i >= 254 Then
+                '            b1 = sliceObjectsCurrent.First.Value
+                '            left = b1.getLeftEdge
+                '            right = b1.getRightEdge
+                '            If (sliceObjectsInProgress.Count = 0) Then
+                '                sliceObjectsInProgress.AddFirst(b1)
+                '            ElseIf ((right.x < sliceObjectsInProgress.First.Value.getLeftEdge.x) And (left.x < sliceObjectsInProgress.First.Value.getRightEdge.x)) Then
+                '                sliceObjectsInProgress.First.Value = sliceObjectsInProgress.First.Value + b1
+                '            End If
+                '        ElseIf sliceSelect = False Then
+                '            sliceSelect = True
+                '        End If
+                '        sliceSelect = True
+                '    End If
+                'Next
                 counter = 0
 
             Loop 'this is the end of the DoWhile loop above
