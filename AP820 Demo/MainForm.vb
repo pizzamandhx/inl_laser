@@ -103,10 +103,10 @@ Public Class Form1
             slice2(i) = New Point
         Next
 
+        sliceSelect = True
         'In
         If fileName <> "" Then
             sr = File.OpenText(fileName)
-            sliceSelect = True
             Do While sr.Peek >= 0
                 encoder = sr.ReadLine
                 If encoder <> "" Then
@@ -136,7 +136,7 @@ Public Class Form1
                             End Try
                         Next i
 
-                    ElseIf sliceSelect <> True Then
+                    ElseIf sliceSelect = False Then
                         For i = 0 To BLOCKSIZE
                             curPoint = sr.ReadLine
                             loc(2) = curPoint.Length
@@ -279,11 +279,16 @@ Public Class Form1
                 '    End If
                 'Next
                 counter = 0
-
+                If (sliceSelect = True) Then
+                    sliceSelect = False
+                ElseIf (sliceSelect = False) Then
+                    sliceSelect = True
+                End If
             Loop 'this is the end of the DoWhile loop above
         Else
             MsgBox("No input filename specified!", MsgBoxStyle.Exclamation)
         End If
+        
     End Function
 
     Private Function fileOut(ByVal fileName As String, ByVal val() As Point)
